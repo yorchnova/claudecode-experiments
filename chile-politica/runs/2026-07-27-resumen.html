@@ -1,0 +1,676 @@
+<title>Chile Política — Informe Ejecutivo</title>
+<meta name="description" content="Resumen ejecutivo trimestral del gobierno de José Antonio Kast, marzo–julio 2026." />
+<style>
+  :root{
+    --bg:#F1F1EE;
+    --surface:#FFFFFF;
+    --surface-2:#F7F6F3;
+    --text:#1B1E22;
+    --text-muted:#5B6470;
+    --text-faint:#8A929B;
+    --border:#DEE1E1;
+    --border-strong:#C7CBCA;
+    --accent:#A85C32;
+    --accent-ink:#7A4322;
+    --accent-soft:#F1E2D3;
+    --cat-gabinete:#2E6FA0;
+    --cat-congreso:#6E5AA6;
+    --cat-judicial:#9C3B3B;
+    --cat-territorial:#3F7D5C;
+    --cat-movilizacion:#9C8615;
+    --shadow: 0 1px 2px rgba(20,20,15,0.04), 0 6px 20px -8px rgba(20,20,15,0.12);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:where(:not([data-theme="light"])){
+      --bg:#15181B;
+      --surface:#1C2024;
+      --surface-2:#202428;
+      --text:#EBEDEE;
+      --text-muted:#9AA3AC;
+      --text-faint:#6E7680;
+      --border:#2B3035;
+      --border-strong:#3A4046;
+      --accent:#D98A55;
+      --accent-ink:#F0B384;
+      --accent-soft:rgba(217,138,85,0.14);
+      --cat-gabinete:#5FA3DB;
+      --cat-congreso:#9C8FD9;
+      --cat-judicial:#DE8080;
+      --cat-territorial:#5FA37E;
+      --cat-movilizacion:#C9B24E;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#15181B; --surface:#1C2024; --surface-2:#202428; --text:#EBEDEE; --text-muted:#9AA3AC; --text-faint:#6E7680;
+    --border:#2B3035; --border-strong:#3A4046; --accent:#D98A55; --accent-ink:#F0B384; --accent-soft:rgba(217,138,85,0.14);
+    --cat-gabinete:#5FA3DB; --cat-congreso:#9C8FD9; --cat-judicial:#DE8080; --cat-territorial:#5FA37E; --cat-movilizacion:#C9B24E;
+    color-scheme: dark;
+  }
+  :root[data-theme="light"]{
+    --bg:#F1F1EE; --surface:#FFFFFF; --surface-2:#F7F6F3; --text:#1B1E22; --text-muted:#5B6470; --text-faint:#8A929B;
+    --border:#DEE1E1; --border-strong:#C7CBCA; --accent:#A85C32; --accent-ink:#7A4322; --accent-soft:#F1E2D3;
+    --cat-gabinete:#2E6FA0; --cat-congreso:#6E5AA6; --cat-judicial:#9C3B3B; --cat-territorial:#3F7D5C; --cat-movilizacion:#9C8615;
+    color-scheme: light;
+  }
+
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .font-display{ font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif; }
+  .mono{ font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+
+  a{ color:var(--accent-ink); text-decoration-color: color-mix(in srgb, var(--accent-ink) 40%, transparent); }
+  a:hover{ text-decoration-color: var(--accent-ink); }
+  a:focus-visible, button:focus-visible, summary:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; border-radius:2px; }
+
+  .wrap{ max-width:1000px; margin:0 auto; padding: 0 24px 96px; }
+  .prose{ max-width:760px; }
+
+  /* ---------- Masthead ---------- */
+  header.masthead{
+    background:linear-gradient(180deg, var(--surface-2), var(--bg));
+    border-bottom:1px solid var(--border);
+  }
+  .masthead-inner{ max-width:1000px; margin:0 auto; padding:40px 24px 28px; }
+  .eyebrow{
+    font-size:0.75rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--accent-ink);
+    font-weight:700; display:flex; align-items:center; gap:8px; margin-bottom:10px;
+  }
+  .eyebrow::before{ content:""; width:7px; height:7px; border-radius:50%; background:var(--accent); display:inline-block; }
+  h1.title{
+    font-size:clamp(1.7rem, 3.4vw, 2.5rem); margin:0 0 8px; font-weight:600; text-wrap:balance; letter-spacing:-0.01em;
+  }
+  .subtitle{ color:var(--text-muted); font-size:1.02rem; max-width:640px; text-wrap:pretty; margin:0 0 22px; }
+  .meta-row{ display:flex; flex-wrap:wrap; gap:10px 22px; font-size:0.85rem; color:var(--text-faint); }
+  .meta-row b{ color:var(--text-muted); font-weight:600; }
+
+  nav.jump{
+    display:flex; flex-wrap:wrap; gap:6px; margin-top:24px;
+  }
+  nav.jump a{
+    font-size:0.8rem; padding:6px 12px; border:1px solid var(--border); border-radius:99px;
+    color:var(--text-muted); text-decoration:none; background:var(--surface); transition:border-color .15s, color .15s;
+  }
+  nav.jump a:hover{ border-color:var(--border-strong); color:var(--text); }
+
+  /* ---------- Stat strip ---------- */
+  .stat-strip{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border);
+    border:1px solid var(--border); border-radius:10px; overflow:hidden; margin:28px 0 8px;
+  }
+  .stat-tile{ background:var(--surface); padding:16px 18px; }
+  .stat-tile .label{ font-size:0.72rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-faint); margin-bottom:6px; }
+  .stat-tile .value{ font-size:1.5rem; font-weight:600; font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  .stat-tile .value small{ font-size:0.9rem; color:var(--text-muted); font-weight:500; }
+  .stat-tile .delta{ font-size:0.78rem; margin-top:4px; color:var(--text-muted); }
+  .stat-tile .delta.down{ color:var(--cat-judicial); }
+  @media (max-width:720px){ .stat-strip{ grid-template-columns:repeat(2,1fr); } }
+
+  main{ padding-top:8px; }
+
+  /* ---------- Sections ---------- */
+  section.block{
+    margin:44px 0; padding-left:20px; border-left:3px solid var(--cat, var(--border-strong));
+  }
+  section.block > h2{
+    font-size:1.4rem; margin:0 0 4px; font-weight:600; display:flex; align-items:baseline; gap:10px; text-wrap:balance;
+  }
+  section.block > h2 .tag{
+    font-size:0.68rem; text-transform:uppercase; letter-spacing:0.09em; font-weight:700; color:var(--cat);
+    background:color-mix(in srgb, var(--cat) 14%, transparent); padding:3px 8px; border-radius:5px;
+  }
+  section.block > .dek{ color:var(--text-muted); margin:0 0 18px; max-width:640px; }
+
+  ul.bullets{ margin:0 0 14px; padding-left:1.1em; }
+  ul.bullets li{ margin-bottom:9px; }
+  ul.bullets li::marker{ color:var(--cat); }
+
+  details.more{ margin-top:6px; }
+  details.more > summary{
+    cursor:pointer; font-size:0.86rem; font-weight:600; color:var(--cat); list-style:none; display:inline-flex; align-items:center; gap:6px;
+    padding:6px 0;
+  }
+  details.more > summary::-webkit-details-marker{ display:none; }
+  details.more > summary::before{ content:"▸"; display:inline-block; transition:transform .15s; font-size:0.72em; }
+  details.more[open] > summary::before{ transform:rotate(90deg); }
+  details.more .inner{
+    border-top:1px solid var(--border); margin-top:10px; padding-top:14px;
+  }
+  details.more .inner ul.bullets{ font-size:0.94rem; }
+  details.more .inner p{ font-size:0.94rem; color:var(--text-muted); }
+
+  table.data{ border-collapse:collapse; width:100%; font-size:0.88rem; margin:10px 0; }
+  table.data th, table.data td{ text-align:left; padding:8px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
+  table.data th{ font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-faint); font-weight:600; }
+  table.data tr:last-child td{ border-bottom:none; }
+  .table-scroll{ overflow-x:auto; border:1px solid var(--border); border-radius:8px; padding:2px 10px; }
+
+  .src{ color:var(--text-faint); font-size:0.78rem; }
+
+  /* ---------- Chart ---------- */
+  .chart-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px 20px 8px;
+    box-shadow:var(--shadow); margin:20px 0 32px;
+  }
+  .chart-card h3{ margin:0 0 2px; font-size:1.05rem; font-weight:600; }
+  .chart-card .dek{ color:var(--text-muted); font-size:0.86rem; margin:0 0 8px; }
+  .legend{ display:flex; flex-wrap:wrap; gap:14px; margin:6px 0 4px; font-size:0.82rem; color:var(--text-muted); }
+  .legend .item{ display:flex; align-items:center; gap:6px; }
+  .legend .dot{ width:9px; height:9px; border-radius:50%; display:inline-block; }
+  #chartSvg{ width:100%; height:auto; display:block; overflow:visible; }
+  .tooltip{
+    position:absolute; pointer-events:none; background:var(--surface); border:1px solid var(--border-strong);
+    border-radius:8px; padding:8px 10px; font-size:0.78rem; box-shadow:var(--shadow); opacity:0; transition:opacity .1s;
+    transform:translate(-50%,-115%); white-space:nowrap; z-index:5;
+  }
+  .chart-wrap{ position:relative; }
+
+  /* ---------- Index / footer ---------- */
+  .index-table{ width:100%; border-collapse:collapse; font-size:0.92rem; }
+  .index-table th, .index-table td{ padding:9px 10px; border-bottom:1px solid var(--border); text-align:left; }
+  .index-table th{ font-size:0.72rem; text-transform:uppercase; color:var(--text-faint); letter-spacing:0.06em; }
+  .badge-base{ font-size:0.68rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:700; color:var(--accent-ink); background:var(--accent-soft); padding:2px 7px; border-radius:5px; }
+
+  footer.page{ margin-top:64px; padding-top:24px; border-top:1px solid var(--border); color:var(--text-faint); font-size:0.82rem; }
+  footer.page p{ max-width:720px; }
+
+  ::selection{ background:var(--accent-soft); }
+</style>
+
+<header class="masthead">
+  <div class="masthead-inner prose">
+    <div class="eyebrow">Chile Política · Informe ejecutivo</div>
+    <h1 class="title font-display">El primer trimestre y medio de Kast</h1>
+    <p class="subtitle">Gabinete, Congreso, tribunales y calle: línea base de la rutina de seguimiento político, del 11 de marzo al 27 de julio de 2026.</p>
+    <div class="meta-row">
+      <span><b>Período:</b> 11 mar – 27 jul 2026</span>
+      <span><b>Ejecución:</b> 27 jul 2026 (base inicial)</span>
+      <span><b>Próxima corrida:</b> semanal</span>
+    </div>
+    <nav class="jump">
+      <a href="#gabinete">Gabinete</a>
+      <a href="#congreso">Congreso</a>
+      <a href="#judicial">Casos judiciales</a>
+      <a href="#macrozona">Macrozona Sur</a>
+      <a href="#migracion">Migración</a>
+      <a href="#movilizacion">Movilización social</a>
+      <a href="#regional">Tensión regional</a>
+      <a href="#encuestas">Encuestas</a>
+      <a href="#ejecuciones">Ejecuciones anteriores</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <main>
+    <div class="stat-strip" aria-label="Cifras clave del período">
+      <div class="stat-tile">
+        <div class="label">Aprobación (jul)</div>
+        <div class="value">28.9<small>–39%</small></div>
+        <div class="delta down">↓ desde 47.5% al debut</div>
+      </div>
+      <div class="stat-tile">
+        <div class="label">Cambios de gabinete</div>
+        <div class="value">2</div>
+        <div class="delta">+ 20 delegados regionales renunciados</div>
+      </div>
+      <div class="stat-tile">
+        <div class="label">Políticos procesados</div>
+        <div class="value">15<small>+</small></div>
+        <div class="delta">alcaldes, senadores, ex autoridades</div>
+      </div>
+      <div class="stat-tile">
+        <div class="label">Paros nacionales</div>
+        <div class="value">3</div>
+        <div class="delta">estudiantil, portuario ×2</div>
+      </div>
+    </div>
+
+    <section class="block prose" style="border-color:var(--accent); padding-left:20px; margin-top:36px;">
+      <h2 style="color:var(--text)">Lectura de conjunto</h2>
+      <ul class="bullets">
+        <li>Kast asumió el 11 de marzo con 47,5% de aprobación y un gabinete de 24 ministros; a fines de julio la aprobación oscila entre 29% y 39% según encuestadora, tras una caída sostenida.</li>
+        <li>Su coalición se fracturó en público: la acusación contra el exministro Nicolás Grau la aprobó la Cámara pero la rechazó el Senado, con votos de Chile Vamos en contra de la línea de Republicanos y el PNL.</li>
+        <li>La "Megarreforma" tributaria y de reconstrucción es su mayor logro legislativo a la fecha, despachada en tercer trámite el 21 de julio; la oposición ya presentó tres requerimientos ante el Tribunal Constitucional.</li>
+        <li>El Plan Escudo Fronterizo redujo los ingresos irregulares por el norte en 86-90%, con más de 1.170 expulsiones acumuladas — pero el gasto político incluyó tensión diplomática con Perú y Bolivia y críticas de organismos humanitarios.</li>
+        <li>La Macrozona Sur no vio el fin del Estado de Excepción prometido en campaña, sino su refuerzo: mando militar único, nuevas facultades para las FF.AA., y la muerte de un funcionario del GOPE en Valdivia en julio.</li>
+        <li>El costo social del ajuste fiscal se tradujo en calle: paro estudiantil con 35 detenidos (3 jun), dos rondas de paro portuario, y un temporal de julio con 10 muertos que dejó la gestión de la emergencia cuestionada.</li>
+      </ul>
+    </section>
+
+    <!-- ================= CHART ================= -->
+    <div class="chart-card prose" style="max-width:100%;">
+      <h3>Aprobación presidencial, por encuestadora</h3>
+      <p class="dek">Cuatro casas de estudio, seis a diez mediciones cada una, marzo–julio 2026.</p>
+      <div class="chart-wrap">
+        <svg id="chartSvg" viewBox="0 0 860 320" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Gráfico de líneas de aprobación presidencial por encuestadora entre marzo y julio de 2026">
+        </svg>
+        <div class="tooltip" id="tooltip"></div>
+      </div>
+      <div class="legend" id="legend"></div>
+      <details class="more">
+        <summary>Ver datos en tabla</summary>
+        <div class="inner">
+          <div class="table-scroll">
+            <table class="data mono" id="dataTable">
+              <thead><tr><th>Fecha</th><th>Encuestadora</th><th>Aprobación</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- ================= GABINETE ================= -->
+    <section class="block" id="gabinete" style="--cat:var(--cat-gabinete)">
+      <h2>Gobierno y gabinete <span class="tag">Ejecutivo</span></h2>
+      <p class="dek">24 ministros al debut, un cambio de gabinete a los 69 días, y una coalición cada vez más tensionada.</p>
+      <ul class="bullets">
+        <li><b>11 mar</b> — Asunción en el Congreso (Valparaíso); gobierno se define "de emergencia" en seguridad, reconstrucción y economía.</li>
+        <li><b>19 may</b> — Primer cambio de gabinete, el más rápido desde el retorno a la democracia: salen Trinidad Steinert (Seguridad Pública) y Mara Sedini (Segegob); asume Martín Arrau en Seguridad.</li>
+        <li><b>1 jul</b> — Kast admite una "enfermedad económica" tras el Imacec de mayo (-0,9%) y desempleo de 9,4%.</li>
+        <li><b>2 jul</b> — Contraloría concluye que Steinert se excedió al pedir datos de una brigada antidrogas a la PDI; oposición evalúa comisión investigadora y no descarta acusación constitucional.</li>
+        <li><b>23 jul</b> — Renuncia el subsecretario de Hacienda Juan Pablo Rodríguez en plena tramitación de la Megarreforma.</li>
+      </ul>
+      <details class="more">
+        <summary>Cronología completa y coalición</summary>
+        <div class="inner">
+          <ul class="bullets">
+            <li><b>Gabinete inicial:</b> Interior y Seguridad Pública — Claudio Alvarado (UDI); Hacienda — Jorge Quiroz; Defensa — Fernando Barros; Justicia — Fernando Rabat; Segpres — José García Ruminot. 62% independientes, 46% mujeres.</li>
+            <li><b>11 may</b> — Renuncia el subsecretario de Ciencia, Rafael Araos, por diferencias con la ministra Ximena Lincolao.</li>
+            <li><b>2 jun</b> — Cambio de subsecretarios de Seguridad Pública y Prevención del Delito.</li>
+            <li><b>7 may</b> (reportado) — 20 delegados presidenciales regionales renuncian en los primeros dos meses de gobierno.</li>
+            <li><b>Abril</b> — La UDI propone disolver Chile Vamos como coalición formal.</li>
+            <li><b>Fin de junio – julio</b> — Fractura abierta de la coalición tras el fracaso de la acusación contra Grau en el Senado; Kast se reúne con los timoneles de los 4 partidos oficialistas (6 jul) para bajar la tensión; el PNL de Kaiser amenaza con retirar apoyo a la reforma del Sistema de Admisión Escolar y presiona por indultos generales a condenados del estallido de 2019.</li>
+          </ul>
+          <p class="src">Fuentes: gob.cl, Senado de Chile, T13, Cooperativa, BioBioChile, La Tercera, El Dínamo, Diario Financiero.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- ================= CONGRESO ================= -->
+    <section class="block" id="congreso" style="--cat:var(--cat-congreso)">
+      <h2>Congreso <span class="tag">Legislativo</span></h2>
+      <p class="dek">Una acusación constitucional que fracturó al oficialismo, y la Megarreforma como el mayor pulso legislativo del período.</p>
+      <ul class="bullets">
+        <li><b>23 jun</b> — La Cámara <b>aprueba</b> (77-68-1) la acusación constitucional contra el exministro de Hacienda Nicolás Grau, impulsada por Republicanos y el Partido Nacional Libertario.</li>
+        <li><b>30 jun</b> — El Senado la <b>rechaza</b>: ningún capítulo alcanza el quórum de 26 votos (mejor resultado, 16-25); senadores de Chile Vamos votan en contra, exponiendo la fractura de la derecha.</li>
+        <li><b>21 jul</b> — La Cámara despacha en tercer trámite la Megarreforma (85-59); un artículo pasa a comisión mixta. La oposición anuncia tres requerimientos ante el Tribunal Constitucional.</li>
+        <li><b>23 jul</b> — La Cámara aprueba el informe de comisión mixta (80-48-3); pasa al Senado para la votación final, pendiente al cierre de este informe.</li>
+      </ul>
+      <details class="more">
+        <summary>Otras votaciones y mociones relevantes</summary>
+        <div class="inner">
+          <ul class="bullets">
+            <li><b>5 may</b> — Senado aprueba en general (24-20) tipificar como delito el ingreso irregular al país.</li>
+            <li><b>7 jul</b> — Senado aprueba en general (37-3) endurecer la Ley de Responsabilidad Penal Adolescente (autores: senadores Andrés Longton y Camila Flores, RN), permitiendo juzgar como adultos a menores de 16-17 años en delitos graves.</li>
+            <li><b>8 jul</b> — Senado aprueba en particular la reforma a la Ley de Migración, que perfecciona las expulsiones administrativas.</li>
+            <li><b>25 jul</b> — Cámara despacha al Senado el proyecto "Chile Cuida" (90-0-38), que reconoce por primera vez el derecho al cuidado como derecho social.</li>
+            <li><b>Moción "Escucha su Corazón"</b> (25 jun, PNL/Republicanos/RN) — exige escuchar los latidos fetales para acceder a aborto por tres causales; pierde impulso tras el retiro de firma de la diputada Ximena Ossandón (17 jul).</li>
+            <li><b>Presupuesto 2027</b> — aún no ingresa al Congreso; en fase de formulación (ingreso legal hasta el 30 de septiembre).</li>
+            <li><b>Indultos generales</b> a condenados del estallido de 2019 — proyecto del PNL sin urgencia del Ejecutivo; fuente de tensión recurrente entre Kast y su flanco más duro.</li>
+          </ul>
+          <p class="src">Fuentes: T13, La Tercera, BioBioChile, El Mostrador, Senado de Chile, Diario Financiero, Cooperativa.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- ================= JUDICIAL ================= -->
+    <section class="block" id="judicial" style="--cat:var(--cat-judicial)">
+      <h2>Casos judiciales <span class="tag">Tribunales</span></h2>
+      <p class="dek">Al menos 15 autoridades formalizadas, procesadas o condenadas entre abril y julio, en su mayoría por fraude al fisco.</p>
+      <div class="table-scroll">
+        <table class="data">
+          <thead><tr><th>Persona</th><th>Cargo</th><th>Delito</th><th>Estado</th></tr></thead>
+          <tbody>
+            <tr><td>Nicole Cadena / Bélgica Guerra / Cristian Muñoz</td><td>Ex funcionarios Corp. Municipal La Serena</td><td>Fraude al fisco, lavado ($762M)</td><td><b>Condenados</b> 7-8 años (11 jul) — primer caso de corrupción con cárcel efectiva en Coquimbo</td></tr>
+            <tr><td>Raúl Torrealba</td><td>Ex alcalde de Vitacura</td><td>Fraude al fisco, lavado</td><td>Fiscalía pide 28 años; juicio oral reprogramado a nov 2026</td></tr>
+            <tr><td>Luis Hermosilla / Verónica Sabaj</td><td>Abogado / ex ministra Corte de Apelaciones</td><td>Cohecho, prevaricación (Caso Audios)</td><td>Formalizados (4 may, 8 jun)</td></tr>
+            <tr><td>Joaquín Lavín León</td><td>Ex diputado</td><td>Uso de datos Servel, fraude al fisco</td><td>Nueva formalización (8 jul); prisión preventiva desde mayo</td></tr>
+            <tr><td>Camila Flores</td><td>Senadora (RN)</td><td>Fraude al fisco (sueldos de asesores)</td><td>Investigación abierta, sin formalizar</td></tr>
+            <tr><td>Miguel Ángel Calisto</td><td>Senador independiente</td><td>Fraude al fisco, cohecho</td><td>Investigación reabierta (7 jul); desafuero en veremos</td></tr>
+            <tr><td>Camilo Benavente</td><td>Alcalde de Chillán (PPD)</td><td>Fraude al fisco ($1.276M)</td><td>Formalización anunciada (22 jul); audiencia oct 2026</td></tr>
+            <tr><td>Jorge del Pozo</td><td>Alcalde de Chillán Viejo</td><td>Violación, amenazas</td><td>Formalizado (14 jul)</td></tr>
+            <tr><td>Boris Chamorro</td><td>Alcalde de Coronel</td><td>Fraude al fisco ($1.200M)</td><td>Formalización reprogramada 3 veces</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <details class="more">
+        <summary>Otros casos y vacíos por confirmar</summary>
+        <div class="inner">
+          <ul class="bullets">
+            <li>Johnny Piraíno (alcalde de La Calera, fraude al fisco), Juan Galdames (alcalde de Rinconada, fraude y negociación incompatible), Alan Bastías (consejero regional del Biobío, violación) y Marcelo Parra (jefe de gabinete del gobernador de La Araucanía, fraude de subvenciones) también fueron formalizados o quedaron en prisión preventiva en el período.</li>
+            <li>Alberto Larraín y Constanza Gómez (Caso ProCultura) fueron reformalizados el 25 de mayo; la causa se trasladó a Santiago.</li>
+            <li>Manuel Monsalve, ex subsecretario del Interior de Boric, espera juicio oral por violación bajo arresto domiciliario.</li>
+            <li><b>No confirmado con precisión</b> dentro de esta ventana: solicitud de 24 años para ex generales de Carabineros por gastos reservados; una auditoría gubernamental que habría detectado $1,4 billones en fundaciones sin rendir; la arista "bielorrusa" del caso Hermosilla, que menciona a las senadoras Loreto Carvajal y Paulina Vodanovic, los senadores Matías Walker y Sergio Gahona, y el diputado Cristián Araya.</li>
+          </ul>
+          <p class="src">Fuentes: La Tercera, Emol, BioBioChile, T13, CIPER Chile, El Dínamo, Meganoticias, Diario El Día, Ex-Ante.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- ================= MACROZONA SUR ================= -->
+    <section class="block" id="macrozona" style="--cat:var(--cat-territorial)">
+      <h2>Macrozona Sur <span class="tag">Territorial</span></h2>
+      <p class="dek">El Estado de Excepción no se levantó: se reforzó con mando militar único y nuevas facultades para las Fuerzas Armadas.</p>
+      <ul class="bullets">
+        <li>Mando militar unificado desde el 20 de junio (general José Soto Escala); 7 "Fuerzas de Tarea" anunciadas en la Cuenta Pública (1 jun); proyecto de ley (18 may) que da a las FF.AA. facultades de detención en flagrancia.</li>
+        <li><b>Caso Lautaro</b> — 5 miembros de la CAM, incluido el hijo de Héctor Llaitul, declarados culpables (25 jun) y condenados a 7 años cada uno (13 jul) por atentados de 2022.</li>
+        <li><b>15–18 jul</b> — Tiroteo en Valdivia durante la captura de "El Rana", prófugo por el homicidio del cabo Naín: dos carabineros heridos; uno, del GOPE, muere el 18 de julio.</li>
+        <li>Atentados incendiarios recurrentes en Collipulli, Ercilla, Victoria, Lautaro y Curacautín entre mayo y julio; el gobernador de La Araucanía, René Saffirio, cuestionó el relato oficial sobre la región (fin de junio).</li>
+      </ul>
+      <details class="more">
+        <summary>Cronología ampliada</summary>
+        <div class="inner">
+          <ul class="bullets">
+            <li><b>13 may</b> — Ataques a tiros contra dos comisarías en Ercilla; la comunidad de Temucuicui es allanada.</li>
+            <li><b>19 may</b> — Captura del werken histórico Jorge Huenchullán en un operativo con helicóptero; represalias incendiarias en Lautaro esa misma noche.</li>
+            <li><b>5 jun / 6 jul</b> — Sesiones macrozonales Araucanía-Biobío (Angol y Los Ángeles) para coordinar la estrategia de seguridad.</li>
+            <li><b>16 y 24 jul</b> — Detenciones vinculadas a la Resistencia Mapuche Lafkenche por el homicidio de Moisés Orellana Pavez (2020).</li>
+            <li><b>11 jul</b> — Nueva división en el oficialismo por el proyecto de reparación a víctimas de violencia rural (heredado del gobierno de Boric).</li>
+          </ul>
+          <p class="src">Fuentes: BioBioChile, Emol, La Tercera, Cooperativa, La Tribuna, Infobae, Resumen Latinoamericano (línea editorial crítica al gobierno, contrastado con medios generalistas).</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- ================= MIGRACION ================= -->
+    <section class="block" id="migracion" style="--cat:var(--cat-territorial)">
+      <h2>Migración y frontera norte <span class="tag">Territorial</span></h2>
+      <p class="dek">El Plan Escudo Fronterizo redujo drásticamente los ingresos irregulares, con costo diplomático y humanitario.</p>
+      <ul class="bullets">
+        <li><b>11-17 mar</b> — Decreto del Plan Escudo Fronterizo: zanjas, muros, drones y 3.000 efectivos en Arica-Parinacota, Tarapacá y Antofagasta.</li>
+        <li>Caída de 86-88% en ingresos irregulares (enero-mayo 2026 vs. 2025); en Colchane, de 286 casos en marzo a 24 en junio.</li>
+        <li>Más de 1.170 expulsiones acumuladas a julio — más que todo 2022, 2023 y 2024 juntos, y 92% de todo 2025.</li>
+        <li><b>Mayo</b> — Kast aclara que su promesa de expulsar a 300.000 migrantes "el primer día" era "una metáfora", tras críticas de la oposición.</li>
+      </ul>
+      <details class="more">
+        <summary>Diplomacia regional y críticas de sociedad civil</summary>
+        <div class="inner">
+          <ul class="bullets">
+            <li>Tensión inicial con Perú (estado de emergencia en Tacna) y Bolivia (rechazo a "barreras físicas") en marzo, seguida de acercamiento: reunión de cancilleres Chile-Bolivia (23-24 abr) y reunión Kast-Paz en la Cumbre de Mercosur (30 jun).</li>
+            <li>Intento de restablecer relaciones consulares con Venezuela para facilitar expulsiones, con altibajos; en julio se reporta diálogo "más fluido" y autorización de salida humanitaria para venezolanos con pasaporte vencido.</li>
+            <li>El Servicio Jesuita a Migrantes cuestionó restricciones al acceso a salud para migrantes irregulares y la obligación de denunciar a migrantes en escuelas y consultorios (mayo).</li>
+            <li>No se encontró información confiable sobre situación humanitaria específica (muertes en el desierto, campamentos) en 2026 — vacío señalado para seguimiento.</li>
+          </ul>
+          <p class="src">Fuentes: Infobae, CNN en Español, MOP, BioBioChile Investiga, Euronews, Le Monde Diplomatique Chile.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- ================= MOVILIZACION ================= -->
+    <section class="block" id="movilizacion" style="--cat:var(--cat-movilizacion)">
+      <h2>Movilización social <span class="tag">Calle</span></h2>
+      <p class="dek">Del ajuste fiscal a la calle: paros sectoriales, represión y una emergencia climática que puso a prueba al gobierno.</p>
+      <ul class="bullets">
+        <li><b>1 may</b> — Marcha de la CUT: más de 60.000 personas en Santiago, la más masiva en años recientes.</li>
+        <li><b>3 jun</b> — Paro nacional estudiantil-docente contra "Escuelas Protegidas" y la Megarreforma; represión policial deja 35 detenidos y 6 heridos.</li>
+        <li><b>18-19 jun y 9 jul</b> — Dos rondas de paro portuario nacional por incumplimiento de "pensiones de gracia".</li>
+        <li><b>13-21 jul</b> — Temporal en 10 regiones: 10 muertos, 4 desaparecidos, más de 100.000 personas aisladas; 43% reprueba la gestión de la emergencia.</li>
+      </ul>
+      <details class="more">
+        <summary>Otros conflictos laborales y sociales</summary>
+        <div class="inner">
+          <ul class="bullets">
+            <li><b>6 jun</b> — Marcha por los Derechos Humanos contra eventuales indultos a condenados de la dictadura y agresores sexuales; más de 1.000 asistentes.</li>
+            <li><b>Marzo-mayo</b> — Amenaza de paro de camioneros por el alza del diésel, resuelta con acuerdo de compensación del Ministerio de Transportes.</li>
+            <li>FENATS (salud) y ANEF (sector público) mantuvieron paros y movilizaciones por recortes presupuestarios de 3% en varios servicios (abril-mayo).</li>
+            <li><b>3-4 jul</b> — Movilización de gremios de salud contra la Megarreforma ("Mega Marcha contra la Mega Reforma").</li>
+          </ul>
+          <p class="src">Fuentes: CNN en Español, BioBioChile, T13, El Mostrador, Diario Financiero, Portal Portuario, Radio Universidad de Chile.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- ================= REGIONAL ================= -->
+    <section class="block" id="regional" style="--cat:var(--cat-gabinete)">
+      <h2>Tensión gobierno–regiones <span class="tag">Gobernabilidad</span></h2>
+      <p class="dek">Del Fondo Común Municipal a la exención de contribuciones: alcaldes y gobernadores, de todos los signos, chocan con La Moneda.</p>
+      <ul class="bullets">
+        <li><b>30 abr</b> — La ACHM convoca una Asamblea Nacional Extraordinaria con más de 220 alcaldes ante el recorte al Fondo Común Municipal.</li>
+        <li><b>4-5 jun</b> — En el Encuentro Nacional de Alcaldes (La Serena), Kast es recibido entre gritos y pifias, interrumpido por los alcaldes de Puente Alto y Tierra Amarilla.</li>
+        <li><b>17 jun</b> — Primera reunión formal de todos los gobernadores regionales con Kast en La Moneda, sobre descentralización y nuevas competencias.</li>
+        <li><b>16-23 jul</b> — Quiebre en la ACHM por el acuerdo sobre exención de contribuciones a mayores de 65; alcaldes evalúan abandonar la asociación.</li>
+        <li><b>20-24 jul</b> — Choque público entre el ministro de Vivienda Iván Poduje y el gobernador de Coquimbo durante la emergencia climática; Agorechi defiende al gobernador.</li>
+      </ul>
+      <p class="src">Fuentes: BioBioChile, The Clinic, T13, La Tercera, Radio Universidad de Chile.</p>
+    </section>
+
+    <!-- ================= ENCUESTAS ================= -->
+    <section class="block" id="encuestas" style="--cat:var(--accent)">
+      <h2>Encuestas <span class="tag" style="color:var(--accent)">Opinión pública</span></h2>
+      <p class="dek">Ver gráfico y tabla completa más arriba. Tendencia: caída sostenida desde el debut hasta mínimos de 28-32% entre mayo y julio, con repuntes puntuales asociados a la respuesta a la emergencia climática.</p>
+    </section>
+
+    <!-- ================= INDICE EJECUCIONES ================= -->
+    <section class="block prose" id="ejecuciones" style="border-color:var(--border-strong)">
+      <h2 style="color:var(--text)">Ejecuciones de esta rutina</h2>
+      <p class="dek">Cada corrida agrega una fila. La primera estableció la línea base; las siguientes agregan solo lo nuevo de la semana.</p>
+      <table class="index-table">
+        <thead><tr><th>Fecha de ejecución</th><th>Período cubierto</th><th>Alcance</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="mono">2026-07-27</td>
+            <td>11 mar – 27 jul 2026</td>
+            <td><span class="badge-base">Línea base</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer class="page prose">
+      <p><b>Metodología y limitaciones:</b> este informe se construyó con 7 búsquedas web independientes cruzando medios chilenos de distintas líneas editoriales y fuentes oficiales (gob.cl, senado.cl, camara.cl, ministerios). El acceso directo a artículos completos estuvo bloqueado en la mayoría de los dominios durante esta sesión; buena parte de la información proviene de extractos de búsqueda cruzados entre al menos dos fuentes, no de la lectura íntegra de cada nota. Los puntos no verificados con certeza se señalan en el detalle de cada sección. Para uso editorial o legal, verificar directamente en fuentes primarias.</p>
+      <p>Generado el 27 de julio de 2026. Base de datos y detalle completo también guardados en el repositorio del proyecto (<span class="mono">chile-politica/</span>).</p>
+    </footer>
+  </main>
+</div>
+
+<script>
+(function(){
+  var data = {
+    "Pulso Ciudadano": [
+      ["2026-03-15",47.5], ["2026-04-19",33.3], ["2026-05-17",31.2],
+      ["2026-05-31",31.0], ["2026-06-28",30.1], ["2026-07-19",28.9]
+    ],
+    "Criteria": [
+      ["2026-04-05",42], ["2026-05-24",37], ["2026-06-28",39],
+      ["2026-07-12",32], ["2026-07-19",37]
+    ],
+    "CEP": [ ["2026-06-10",34] ],
+    "Cadem": [ ["2026-07-15",36], ["2026-07-19",39] ]
+  };
+  var seriesOrder = ["Pulso Ciudadano","Criteria","CEP","Cadem"];
+  var isDark = function(){
+    var t = document.documentElement.getAttribute('data-theme');
+    if (t === 'dark') return true;
+    if (t === 'light') return false;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  };
+  var colors = function(){
+    return isDark() ? {
+      "Pulso Ciudadano":"#D98A55", "Criteria":"#4A93CE", "CEP":"#D97070", "Cadem":"#A08320",
+      grid:"#2c2c2a", axis:"#3A4046", text:"#9AA3AC"
+    } : {
+      "Pulso Ciudadano":"#A85C32", "Criteria":"#2E6FA0", "CEP":"#9C3B3B", "Cadem":"#9C8615",
+      grid:"#e1e0d9", axis:"#C7CBCA", text:"#5B6470"
+    };
+  };
+
+  var W = 860, H = 320, padL = 40, padR = 14, padT = 16, padB = 30;
+  var plotW = W - padL - padR, plotH = H - padT - padB;
+
+  var minDate = new Date("2026-03-01"), maxDate = new Date("2026-07-31");
+  var minVal = 20, maxVal = 55;
+
+  function x(dateStr){
+    var d = new Date(dateStr);
+    var frac = (d - minDate) / (maxDate - minDate);
+    return padL + frac * plotW;
+  }
+  function y(v){
+    var frac = (v - minVal) / (maxVal - minVal);
+    return padT + (1 - frac) * plotH;
+  }
+
+  var svg = document.getElementById('chartSvg');
+  var legend = document.getElementById('legend');
+  var tooltip = document.getElementById('tooltip');
+  var tbody = document.querySelector('#dataTable tbody');
+
+  function monthLabel(m){ return ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"][m]; }
+
+  function render(){
+    var c = colors();
+    var svgns = "http://www.w3.org/2000/svg";
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+
+    // gridlines (horizontal, at 20/30/40/50)
+    [20,30,40,50].forEach(function(v){
+      var ln = document.createElementNS(svgns,'line');
+      ln.setAttribute('x1', padL); ln.setAttribute('x2', W - padR);
+      ln.setAttribute('y1', y(v)); ln.setAttribute('y2', y(v));
+      ln.setAttribute('stroke', c.grid); ln.setAttribute('stroke-width','1');
+      svg.appendChild(ln);
+      var lbl = document.createElementNS(svgns,'text');
+      lbl.setAttribute('x', padL - 8); lbl.setAttribute('y', y(v)+4);
+      lbl.setAttribute('text-anchor','end'); lbl.setAttribute('font-size','11');
+      lbl.setAttribute('fill', c.text); lbl.textContent = v + '%';
+      svg.appendChild(lbl);
+    });
+
+    // month ticks
+    for (var m = 3; m <= 7; m++){
+      var d = new Date("2026-" + (m<10?"0"+m:m) + "-01");
+      var xp = x(d.toISOString().slice(0,10));
+      var lbl = document.createElementNS(svgns,'text');
+      lbl.setAttribute('x', xp); lbl.setAttribute('y', H - 8);
+      lbl.setAttribute('text-anchor','start'); lbl.setAttribute('font-size','11');
+      lbl.setAttribute('fill', c.text); lbl.textContent = monthLabel(m-1);
+      svg.appendChild(lbl);
+      var tick = document.createElementNS(svgns,'line');
+      tick.setAttribute('x1', xp); tick.setAttribute('x2', xp);
+      tick.setAttribute('y1', padT); tick.setAttribute('y2', H - padB);
+      tick.setAttribute('stroke', c.grid); tick.setAttribute('stroke-width','1');
+      tick.setAttribute('stroke-dasharray','2,3');
+      svg.appendChild(tick);
+    }
+
+    // baseline
+    var axis = document.createElementNS(svgns,'line');
+    axis.setAttribute('x1', padL); axis.setAttribute('x2', W - padR);
+    axis.setAttribute('y1', H - padB); axis.setAttribute('y2', H - padB);
+    axis.setAttribute('stroke', c.axis); axis.setAttribute('stroke-width','1');
+    svg.appendChild(axis);
+
+    var allPoints = [];
+
+    seriesOrder.forEach(function(name){
+      var pts = data[name];
+      var color = c[name];
+      var pathD = pts.map(function(p,i){
+        return (i===0?'M':'L') + x(p[0]).toFixed(1) + ',' + y(p[1]).toFixed(1);
+      }).join(' ');
+      var path = document.createElementNS(svgns,'path');
+      path.setAttribute('d', pathD);
+      path.setAttribute('fill','none');
+      path.setAttribute('stroke', color);
+      path.setAttribute('stroke-width', name === "Pulso Ciudadano" ? '2.5' : '2');
+      path.setAttribute('stroke-linecap','round');
+      path.setAttribute('stroke-linejoin','round');
+      svg.appendChild(path);
+
+      pts.forEach(function(p, i){
+        var cx = x(p[0]), cy = y(p[1]);
+        var r = document.createElementNS(svgns,'circle');
+        r.setAttribute('cx', cx); r.setAttribute('cy', cy);
+        r.setAttribute('r', 3.4);
+        r.setAttribute('fill', color);
+        r.setAttribute('stroke', isDark() ? '#1C2024' : '#FFFFFF');
+        r.setAttribute('stroke-width','1.5');
+        r.style.cursor = 'pointer';
+        svg.appendChild(r);
+        allPoints.push({cx:cx, cy:cy, name:name, date:p[0], val:p[1], color:color, el:r});
+
+        if (i === pts.length - 1){
+          var lbl = document.createElementNS(svgns,'text');
+          lbl.setAttribute('x', cx + 7); lbl.setAttribute('y', cy + 4);
+          lbl.setAttribute('font-size','11'); lbl.setAttribute('font-weight','600');
+          lbl.setAttribute('fill', color);
+          lbl.textContent = p[1] + '%';
+          svg.appendChild(lbl);
+        }
+      });
+    });
+
+    // hover targets
+    allPoints.forEach(function(p){
+      p.el.addEventListener('mouseenter', function(evt){
+        showTooltip(p, evt);
+      });
+      p.el.addEventListener('mousemove', function(evt){ showTooltip(p, evt); });
+      p.el.addEventListener('mouseleave', function(){ tooltip.style.opacity = 0; });
+    });
+
+    // legend
+    legend.innerHTML = '';
+    seriesOrder.forEach(function(name){
+      var item = document.createElement('span');
+      item.className = 'item';
+      var dot = document.createElement('span');
+      dot.className = 'dot';
+      dot.style.background = c[name];
+      var label = document.createElement('span');
+      label.textContent = name;
+      item.appendChild(dot); item.appendChild(label);
+      legend.appendChild(item);
+    });
+
+    // table
+    tbody.innerHTML = '';
+    var rows = [];
+    seriesOrder.forEach(function(name){
+      data[name].forEach(function(p){ rows.push({name:name, date:p[0], val:p[1]}); });
+    });
+    rows.sort(function(a,b){ return a.date < b.date ? -1 : 1; });
+    rows.forEach(function(r){
+      var tr = document.createElement('tr');
+      var d = new Date(r.date);
+      var fmt = d.getDate() + ' ' + monthLabel(d.getMonth()).toLowerCase();
+      tr.innerHTML = '<td>' + fmt + '</td><td>' + r.name + '</td><td>' + r.val + '%</td>';
+      tbody.appendChild(tr);
+    });
+  }
+
+  function showTooltip(p, evt){
+    var d = new Date(p.date);
+    var fmt = d.getDate() + ' ' + monthLabel(d.getMonth()) + ' 2026';
+    tooltip.innerHTML = '<b>' + p.name + '</b><br>' + fmt + ' — <span class="mono">' + p.val + '%</span>';
+    var wrapRect = tooltip.parentElement.getBoundingClientRect();
+    var svgRect = svg.getBoundingClientRect();
+    var scale = svgRect.width / W;
+    var left = (p.cx * scale) + (svgRect.left - wrapRect.left);
+    var top = (p.cy * scale) + (svgRect.top - wrapRect.top);
+    tooltip.style.left = left + 'px';
+    tooltip.style.top = top + 'px';
+    tooltip.style.opacity = 1;
+  }
+
+  render();
+  if (window.matchMedia){
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', render);
+  }
+  var mo = new MutationObserver(render);
+  mo.observe(document.documentElement, { attributes:true, attributeFilter:['data-theme'] });
+  window.addEventListener('resize', render);
+})();
+</script>
