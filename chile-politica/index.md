@@ -37,7 +37,7 @@ compartir y navegar que un archivo de texto en una rama de git):
 | Fecha | Enlace |
 |---|---|
 | 2026-08-24 | _(nunca se completó este enlace — ver nota en "Para la próxima ejecución")_ |
-| 2026-09-21 | _(agregado al pie de esta lista tras publicarse en esta misma ejecución)_ |
+| 2026-09-21 | https://claude.ai/artifact/SsQrbHPGuAHvxm66i8hxPz |
 
 ## 🗂️ Ejecución del 21 de septiembre de 2026: misma fragmentación, nueva rama
 
