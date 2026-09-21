@@ -6,6 +6,7 @@
 |---|---|---|---|
 | 2026-08-10 | Línea base | [`informes/2026-08-10-linea-base.md`](informes/2026-08-10-linea-base.md) | 10 mayo – 10 agosto 2026 (3 meses) |
 | 2026-08-24 | Incremental | [`informes/2026-08-24.md`](informes/2026-08-24.md) | 10 – 24 agosto 2026 |
+| 2026-09-21 | Incremental | [`informes/2026-09-21.md`](informes/2026-09-21.md) | 24 agosto – 21 septiembre 2026 |
 
 Base de datos estructurada (crece cada ejecución): [`data/database.json`](data/database.json).
 
@@ -35,23 +36,36 @@ compartir y navegar que un archivo de texto en una rama de git):
 
 | Fecha | Enlace |
 |---|---|
-| 2026-08-24 | _(agregado al pie de esta lista tras publicarse; ver también el listado de Artifacts del usuario)_ |
+| 2026-08-24 | _(nunca se completó este enlace — ver nota en "Para la próxima ejecución")_ |
+| 2026-09-21 | _(agregado al pie de esta lista tras publicarse en esta misma ejecución)_ |
+
+## 🗂️ Ejecución del 21 de septiembre de 2026: misma fragmentación, nueva rama
+
+Esta ejecución llegó —como todas las anteriores— en una rama de git nueva
+(`claude/kind-mayer-1jcetk`), sin que `claude/kind-mayer-oqoso4` (la rama
+consolidada del 24 de agosto) hubiera sido fusionada a la rama por defecto
+del repositorio (`claude/kind-hypatia-z59b6b`) ni convertida en Pull Request.
+Por eso, esta ejecución repitió el paso 1 de abajo: copió el contenido de
+`chile-politica/` desde `claude/kind-mayer-oqoso4` a esta rama antes de
+investigar el período nuevo. **El problema de fondo no está resuelto**: sin
+una fusión real a la rama por defecto (o al menos un Pull Request abierto que
+alguien revise y fusione), cada ejecución futura seguirá teniendo que hacer
+esta misma arqueología de ramas para encontrar el estado más reciente.
 
 ## ⚠️ Para la próxima ejecución
 
-Esta rama (`claude/kind-mayer-oqoso4`) no está fusionada a la rama por
-defecto del repositorio. Si nadie la fusiona, la próxima ejecución de esta
-rutina recibirá —según el patrón observado hasta ahora— otra rama nueva
-sin este historial. Antes de investigar desde cero, la próxima ejecución
-debería:
-
-1. Revisar si `claude/kind-mayer-oqoso4` (u otra rama más reciente que
-   contenga `chile-politica/data/database.json`) ya fue fusionada a la rama
-   por defecto; si no, partir explícitamente desde el contenido de esa
-   rama en vez de la rama por defecto.
-2. Leer `data/database.json` completo para saber qué ya está cubierto.
+1. Revisar si `claude/kind-mayer-1jcetk` (esta rama) —o alguna más reciente
+   que contenga `chile-politica/data/database.json` con más ejecuciones en
+   `meta.ejecuciones`— ya fue fusionada a la rama por defecto del
+   repositorio; si no, partir explícitamente desde el contenido de esa rama
+   en vez de la rama por defecto.
+2. Leer `data/database.json` completo (campo `meta.ejecuciones` y todas las
+   `entries`) para saber qué ya está cubierto.
 3. Investigar solo el período posterior a la fecha del último informe
    (`informes/<fecha>.md` más reciente) hasta la fecha actual.
 4. Anexar sus hallazgos nuevos a `database.json` (sin borrar los
-   anteriores), agregar su propio `informes/<fecha>.md`, y actualizar este
-   índice.
+   anteriores, con IDs `w3-XX`, `w4-XX`, etc.), agregar su propio
+   `informes/<fecha>.md`, y actualizar este índice.
+5. Si es posible, pedir explícitamente que esta rama se fusione a la rama
+   por defecto (o abrir un Pull Request) antes de terminar, para que la
+   próxima ejecución no tenga que repetir este mismo rescate.

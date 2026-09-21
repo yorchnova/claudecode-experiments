@@ -50,6 +50,17 @@ es fusionar (merge) cada rama de esta rutina a la rama principal del
 repositorio apenas termine, o pedir explícitamente que se abra un Pull
 Request para revisarla y fusionarla.
 
+**Actualización (21 de septiembre de 2026):** exactamente eso volvió a
+pasar. La rama consolidada del 24 de agosto (`claude/kind-mayer-oqoso4`)
+nunca se fusionó ni se convirtió en Pull Request, así que esta ejecución
+llegó en otra rama nueva (`claude/kind-mayer-1jcetk`) y tuvo que repetir el
+rescate: copiar `chile-politica/` desde `oqoso4` antes de investigar el
+período 24 agosto–21 septiembre. Ver el detalle en
+[`index.md`](index.md#🗂️-ejecución-del-21-de-septiembre-de-2026-misma-fragmentación-nueva-rama).
+El problema de fondo sigue sin resolverse — requiere una fusión explícita a
+la rama por defecto del repositorio, algo que esta rutina no hace por su
+cuenta salvo que se le pida.
+
 ## Estructura
 
 ```
@@ -60,7 +71,8 @@ chile-politica/
 │   └── database.json       — base de datos estructurada (crece cada ejecución)
 └── informes/
     ├── 2026-08-10-linea-base.md   — línea base: mayo-agosto 2026 (3 meses)
-    └── 2026-08-24.md              — primer informe incremental
+    ├── 2026-08-24.md              — primer informe incremental
+    └── 2026-09-21.md              — segundo informe incremental
 ```
 
 ## Metodología

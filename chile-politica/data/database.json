@@ -1,7 +1,13 @@
 {
   "meta": {
     "descripcion": "Base de datos estructurada del Radar Político de Chile. Cada entrada es un hallazgo verificado con fecha, categoría y fuente(s). Las ejecuciones futuras deben leer este archivo antes de investigar (para no repetir búsquedas ya hechas) y anexar sus nuevos hallazgos sin borrar los anteriores.",
-    "categorias": ["ejecutivo", "congreso", "judicial", "movilizacion", "opinion_publica"],
+    "categorias": [
+      "ejecutivo",
+      "congreso",
+      "judicial",
+      "movilizacion",
+      "opinion_publica"
+    ],
     "cobertura_linea_base": "2026-05-10 a 2026-08-10",
     "ejecuciones": [
       {
@@ -15,46 +21,901 @@
         "tipo": "incremental",
         "informe": "informes/2026-08-24.md",
         "nota": "Primer informe incremental sobre la línea base."
+      },
+      {
+        "fecha": "2026-09-21",
+        "tipo": "incremental",
+        "informe": "informes/2026-09-21.md",
+        "nota": "Segundo informe incremental. Rama consolidada nuevamente en claude/kind-mayer-1jcetk a partir de claude/kind-mayer-oqoso4 (ver README.md)."
       }
     ]
   },
   "entries": [
-    {"id": "b-01", "fecha": "2026-08-05", "fecha_aprox": false, "categoria": "congreso", "titulo": "Megarreforma económica despachada, pero con 3 requerimientos ante el TC y 3 vetos presidenciales pendientes", "resumen": "Baja del impuesto corporativo de 27% a 23%, invariabilidad tributaria hasta 20 años, fin de contribuciones para adultos mayores. Completa trámite legislativo el 5 de agosto.", "fuentes": ["https://www.france24.com/es/minuto-a-minuto/20260716-el-senado-aprueba-la-megarreforma-econ%C3%B3mica-de-kast-en-chile"]},
-    {"id": "b-02", "fecha": "2026-08-05", "fecha_aprox": false, "categoria": "ejecutivo", "titulo": "Kast lanza en cadena nacional agenda de seguridad ACOT (~15 proyectos)", "resumen": "Nuevo estado de excepción, tipificación de crimen organizado, FF.AA. apoyando a Carabineros en 50 barrios críticos; único anuncio con repunte real en encuestas.", "fuentes": ["https://www.biobiochile.cl/noticias/nacional/chile/2026/08/05/presidente-kast-anuncia-en-cadena-nacional-su-megarreforma-en-seguridad.shtml"]},
-    {"id": "b-03", "fecha": "2026-05-19", "fecha_aprox": false, "categoria": "ejecutivo", "titulo": "Primer cambio de gabinete de Kast, el más rápido desde el retorno a la democracia (69 días)", "resumen": "Salen la ministra de Seguridad Pública Trinidad Steinert y la vocera Mara Sedini; asume Martín Arrau en Seguridad.", "fuentes": ["https://www.biobiochile.cl/noticias/nacional/chile/2026/05/19/cambio-de-gabinete-a-69-dias-ajuste-ministerial-de-kast-es-el-mas-veloz-desde-retorno-a-la-democracia.shtml"]},
-    {"id": "b-04", "fecha": "2026-06-23", "fecha_aprox": false, "categoria": "congreso", "titulo": "Acusación constitucional contra el exministro Nicolás Grau: aprobada en Cámara, rechazada en Senado", "resumen": "Cámara aprueba 77-68 el 23 de junio (con votos en contra de RN/Evópoli); Senado la rechaza el 30 de junio en sus 4 capítulos.", "fuentes": ["https://www.senado.cl/comunicaciones/noticias/senado-desestima-acusacion-constitucional-en-contra-del-exministro-grau"]},
-    {"id": "b-05", "fecha": "2026-08-07", "fecha_aprox": false, "categoria": "congreso", "titulo": "Fractura interna en la derecha por intento del PNL de suspender la Ley Karin por 5 años", "resumen": "Rechazado por la propia Mesa del Senado (UDI/RN) y por Kast; Kaiser acusa al gobierno de falta de capacidad de gestión.", "fuentes": ["https://laprensaaustral.cl/2026/08/07/diputados-presentaron-proyecto-para-suspender-por-cinco-anos-la-ley-karin-y-reabrir-debate-sobre-normas/"]},
-    {"id": "b-06", "fecha": "2026-07-15", "fecha_aprox": true, "categoria": "ejecutivo", "titulo": "Aranceles de EE.UU. (12,5%) a exportaciones chilenas golpean la política exterior de Kast", "resumen": "87% de la ciudadanía rechaza la medida (Cadem); trascienden reproches internos inéditos del gabinete hacia Washington.", "fuentes": []},
-    {"id": "b-07", "fecha": "2026-07-20", "fecha_aprox": false, "categoria": "ejecutivo", "titulo": "Estado de catástrofe en Coquimbo y Huasco por temporal en el norte", "resumen": "Entre 6 y 23 muertos según la fuente, más de 13.000 damnificados; alcaldes acusan abandono del gobierno central.", "fuentes": ["https://www.infobae.com/america/america-latina/2026/07/21/chile-declaro-el-estado-de-catastrofe-tras-un-temporal-que-dejo-al-menos-10-muertos-y-mas-de-1100-viviendas-destruidas/"]},
-    {"id": "b-08", "fecha": "2026-08-10", "fecha_aprox": false, "categoria": "judicial", "titulo": "Ningún caso judicial de alto perfil golpea directamente al gobierno de Kast en el trimestre", "resumen": "Los casos penales relevantes del trimestre involucran sobre todo a exautoridades del gobierno anterior y a alcaldes de diversas comunas/partidos.", "fuentes": []},
-    {"id": "b-09", "fecha": "2026-08-10", "fecha_aprox": true, "categoria": "movilizacion", "titulo": "Frente sindical/gremial activo pero disperso: paro docente anunciado para el 28 de agosto", "resumen": "Recortes en salud ($413.000 millones) y educación ($197.000 millones) generan protestas sucesivas de Confech, Colegio de Profesores, ANEF y FENATS entre mayo y agosto.", "fuentes": []},
-    {"id": "b-10", "fecha": "2026-05-19", "fecha_aprox": false, "categoria": "movilizacion", "titulo": "Detención del werken histórico Jorge Huenchullán en La Araucanía", "resumen": "Prófugo desde 2021; seguida de ataques incendiarios contra predios forestales; Kast luego cuestiona la política de compra de tierras para comunidades mapuche.", "fuentes": ["https://www.latercera.com/politica/noticia/kast-por-detencion-de-huenchullan-en-temucuicui-seguimos-avanzando-para-restablecer-el-estado-de-derecho-en-todo-el-territorio-nacional/"]},
-    {"id": "b-11", "fecha": "2026-08-05", "fecha_aprox": false, "categoria": "congreso", "titulo": "Debate sobre indultos y pelea pública Campillai-Flores en el Senado", "resumen": "28 solicitudes de indulto pendientes; fuerte enfrentamiento público entre las senadoras Fabiola Campillai y Camila Flores por el tema.", "fuentes": []},
-    {"id": "b-12", "fecha": "2026-08-09", "fecha_aprox": false, "categoria": "opinion_publica", "titulo": "Aprobación presidencial de Kast nunca superó 43% en el trimestre; percepción de que \"Chile retrocede\" sube de 31% a 47%", "resumen": "Mínimos históricos en julio (25,6% Pulso Ciudadano; 60% desaprobación Cadem); repunte leve en agosto ligado a la agenda de seguridad.", "fuentes": ["https://www.t13.cl/noticia/politica/criteria-kast-sube-35-aprobacion-pero-aumenta-percepcion-chile-retrocede-9-8-2026"]},
-
-    {"id": "w1-01", "fecha": "2026-08-10", "fecha_aprox": false, "categoria": "congreso", "titulo": "Cámara de Diputados aprueba los 3 vetos de Kast a la megarreforma", "resumen": "Anatocismo 75-59-12; olvido financiero 75-58-13; pago a 30 días a pymes 74-50-22. Pasa al Senado.", "fuentes": ["https://www.biobiochile.cl/noticias/nacional/chile/2026/08/10/camara-de-diputados-aprueba-los-tres-vetos-de-kast-a-la-megarreforma-y-pasan-al-senado.shtml"]},
-    {"id": "w1-02", "fecha": "2026-08-12", "fecha_aprox": false, "categoria": "congreso", "titulo": "Senado aprueba los 3 vetos y cierra la tramitación de la megarreforma en el Congreso", "resumen": "Anatocismo 24-18-1; olvido financiero 23-15-2; pago 30 días pymes 18-17-4 (muy estrecho).", "fuentes": ["https://www.biobiochile.cl/noticias/nacional/chile/2026/08/12/senado-aprueba-vetos-del-gobierno-a-la-megarreforma-y-pone-fin-a-su-tramitacion-en-el-congreso.shtml"]},
-    {"id": "w1-03", "fecha": "2026-08-13", "fecha_aprox": false, "categoria": "congreso", "titulo": "Tribunal Constitucional acoge parcialmente los requerimientos contra la megarreforma", "resumen": "Caen la indemnización por anulación de RCA y normas de participación ciudadana/acuicultura; se mantiene la invariabilidad tributaria y la baja del impuesto corporativo.", "fuentes": ["https://radio.uchile.cl/2026/08/14/tc-acoge-parcialmente-requerimientos-contra-la-megarreforma-y-declara-inconstitucionales-normas-tributarias-y-ambientales/"]},
-    {"id": "w1-04", "fecha": "2026-08-13", "fecha_aprox": false, "categoria": "ejecutivo", "titulo": "Renuncia la ministra del Deporte Natalia Duco por el caso del auto fiscal", "resumen": "Junto al subsecretario Andrés Otero; asume Francisco Riveros el 14 de agosto. Sube a 43 el conteo de autoridades fuera del gobierno en 5 meses.", "fuentes": ["https://www.emol.com/noticias/Nacional/2026/08/13/1208459/duco-renuncia-deportes-polemica-auto.html"]},
-    {"id": "w1-05", "fecha": "2026-08-13", "fecha_aprox": false, "categoria": "ejecutivo", "titulo": "Traslado de ~300 reos de alta peligrosidad al nuevo penal La Laguna (Talca)", "resumen": "Presentado como \"día histórico\"; comparado por CNN con el estilo Bukele; criticado por exautoridades Cordero y Tohá.", "fuentes": ["https://cnnespanol.cnn.com/2026/08/14/latinoamerica/chile-kast-traslado-presos-carcel-orix"]},
-    {"id": "w1-06", "fecha": "2026-08-17", "fecha_aprox": false, "categoria": "congreso", "titulo": "Gobierno ingresa la reforma constitucional de seguridad (ACOT) al Senado con suma urgencia", "resumen": "Requiere 89 votos en Cámara y 29 en Senado; derivada a 3 comisiones (Constitución, Seguridad, Defensa); sin votación al 24 de agosto.", "fuentes": ["https://www.biobiochile.cl/noticias/nacional/chile/2026/08/17/kast-ingresa-al-senado-reforma-de-seguridad-con-suma-urgencia-contempla-8-medidas.shtml"]},
-    {"id": "w1-07", "fecha": "2026-08-19", "fecha_aprox": false, "categoria": "congreso", "titulo": "Rebelión parlamentaria: la reforma de seguridad de Kast no reúne ni los votos del oficialismo", "resumen": "RN, UDI, Evópoli y el PNL cuestionan el nuevo estado de excepción por concentrar poder excesivo en el Presidente.", "fuentes": ["https://www.elmostrador.cl/noticias/pais/2026/08/19/rebelion-en-la-derecha-reforma-de-seguridad-de-kast-no-reune-ni-los-votos-del-oficialismo/"]},
-    {"id": "w1-08", "fecha": "2026-08-17", "fecha_aprox": false, "categoria": "ejecutivo", "titulo": "Kast reconoce que no ha revisado ningún indulto del estallido social", "resumen": "\"No los tengo en mi escritorio\"; genera reclamos en su propia coalición por falta de avance, pese a la iniciativa \"Presos por Servir\" (+10.000 firmas).", "fuentes": ["https://www.latercera.com/politica/noticia/aca-manda-el-presidente-o-el-ministro-de-justicia-kast-reconoce-que-no-ha-revisado-indultos-y-desata-reclamos-en-la-derecha/"]},
-    {"id": "w1-09", "fecha": "2026-08-18", "fecha_aprox": false, "categoria": "ejecutivo", "titulo": "Estado de Excepción de Catástrofe en Tocopilla por aluvión", "resumen": "Evacuaciones masivas en varios sectores; subsecretario del Interior Máximo Pavez en terreno desde la noche anterior.", "fuentes": ["https://www.emol.com/noticias/Nacional/2026/08/18/1208867/kast-estado-excepcion-tocopilla-aluviones.html"]},
-    {"id": "w1-10", "fecha": "2026-08-19", "fecha_aprox": false, "categoria": "congreso", "titulo": "Cámara y Senado prorrogan 30 días el estado de excepción en La Araucanía/Biobío/Arauco", "resumen": "Senado aprueba 27 a favor; vigente desde el 23 de agosto; Gobierno argumenta baja de hechos de violencia.", "fuentes": ["https://www.senado.cl/comunicaciones/noticias/prorrogan-estado-de-excepcion-constitucional-de-emergencia-en-la-macrozona"]},
-    {"id": "w1-11", "fecha": "2026-08-20", "fecha_aprox": false, "categoria": "judicial", "titulo": "Caso Junaeb: allanamientos a los senadores Miguel Ángel Calisto y Sergio Gahona", "resumen": "Fiscalía y PDI realizan +10 allanamientos por presuntas coimas en licitaciones de alimentación escolar (~$14.000 millones, empresa Soser); se levanta el secreto bancario de ambos senadores y del exdiputado Hugo Gutiérrez.", "fuentes": ["https://eldesconcierto.cl/actualidad/fiscalia-allana-oficinas-senadores-calisto-y-gahona-irregularidades-licitaciones-junaeb-n5461527", "https://www.cooperativa.cl/noticias/pais/judicial/denuncias-de-corrupcion/caso-junaeb-pdi-allana-oficinas-de-senadores-gahona-y-calisto-por/2026-08-20/120626.html"]},
-    {"id": "w1-12", "fecha": "2026-08-18", "fecha_aprox": false, "categoria": "judicial", "titulo": "Formalización del alcalde de Coihueco, Wilson Palma, por 7 delitos de connotación sexual", "resumen": "Tribunal solo acoge la cautelar de no acercamiento a la víctima; rechaza arraigo, firma y arresto domiciliario. Se declara inocente.", "fuentes": ["https://www.biobiochile.cl/noticias/nacional/region-de-nuble/2026/08/18/alcalde-de-coihueco-sera-formalizado-por-presunto-abuso-sexual-tras-denuncia-de-exfuncionaria.shtml"]},
-    {"id": "w1-13", "fecha": "2026-08-14", "fecha_aprox": false, "categoria": "judicial", "titulo": "Formalización del alcalde de Pozo Almonte, Richard Godoy, por delitos tributarios", "resumen": "Facturas falsas 2016-2021, perjuicio fiscal superior a $1.316 millones; arraigo nacional y firma mensual.", "fuentes": ["https://www.cooperativa.cl/noticias/site/artic/20260814/pags-amp/20260814110955.html"]},
-    {"id": "w1-14", "fecha": "2026-08-19", "fecha_aprox": false, "categoria": "judicial", "titulo": "Formalización (4° intento) del alcalde de Coronel, Boris Chamorro, por condonación irregular", "resumen": "$1.200 millones condonados en patentes a una embotelladora en 2020; resultado de la audiencia no confirmado al 24 de agosto.", "fuentes": ["https://www.biobiochile.cl/noticias/nacional/region-del-bio-bio/2026/08/19/alcalde-de-coronel-sera-formalizado-por-condonacion-de-1-200-millones-a-embotelladora-llacolen.shtml"]},
-    {"id": "w1-15", "fecha": "2026-08-17", "fecha_aprox": false, "categoria": "judicial", "titulo": "Caso Convenios / arista Kimün: Diego Ancalao termina de declarar en juicio oral", "resumen": "Fiscalía de Los Lagos pide en conjunto más de 50 años de presidio para 6 imputados por desvío de $1.200 millones del GORE Los Lagos. Sin sentencia al 24 de agosto.", "fuentes": ["https://www.biobiochile.cl/noticias/nacional/region-de-los-lagos/2026/08/17/caso-convenios-avanza-juicio-por-presunto-desvio-de-1-200-millones-del-gore-los-lagos-a-kimun.shtml"]},
-    {"id": "w1-16", "fecha": "2026-08-17", "fecha_aprox": false, "categoria": "judicial", "titulo": "Fiscalía amplía investigación al PDG por lavado de activos", "resumen": "Nueva arista suma a las de firmas falsas y gastos irregulares 2023; incluye denuncias de quema de cartolas bancarias del partido. Parisi niega haber sido contactado.", "fuentes": ["https://www.elmostrador.cl/noticias/pais/2026/08/17/fiscalia-indaga-lavado-de-activos-en-el-pdg-y-parisi-ironiza-con-quema-de-cartolas/"]},
-    {"id": "w1-17", "fecha": "2026-08-22", "fecha_aprox": false, "categoria": "judicial", "titulo": "Frente Amplio oficia a Contraloría por presunto conflicto de interés del ministro de Hacienda Jorge Quiroz", "resumen": "Vinculado a tramitación acelerada de un proyecto inmobiliario de su hermano e inconsistencias en su declaración de patrimonio. Es un requerimiento de fiscalización, no un sumario formal.", "fuentes": ["https://www.t13.cl/noticia/politica/frente-amplio-oficia-contraloria-por-eventuales-conflictos-interes-ministro-quiroz-22-8-2026"]},
-    {"id": "w1-18", "fecha": "2026-08-10", "fecha_aprox": false, "categoria": "movilizacion", "titulo": "Movilización de trabajadores de Chuquicamata por \"Codelco 100% estatal\"", "resumen": "Rechazan una eventual privatización parcial planteada por el senador republicano Arturo Squella; petitorio de 7 puntos entregado a Kast el 12 de agosto. Gobierno reitera que no está en sus planes.", "fuentes": ["https://www.elclarin.cl/2026/08/11/codelco-no-esta-en-venta-trabajadores-se-movilizan-en-santiago-ante-amenaza-de-privatizacion/"]},
-    {"id": "w1-19", "fecha": "2026-08-13", "fecha_aprox": false, "categoria": "movilizacion", "titulo": "Gobierno finaliza el desalojo de la \"megatoma\" de San Antonio", "resumen": "98,4 hectáreas devueltas a su propietario; más de 500 personas removidas desde julio-agosto; el Gobierno anuncia que el operativo continuará en otras regiones.", "fuentes": ["https://www.cooperativa.cl/noticias/pais/region-de-valparaiso/gobierno-finalizo-desalojo-de-megatoma-de-san-antonio-terreno-fue/2026-08-13/213514.html"]},
-    {"id": "w1-20", "fecha": "2026-08-20", "fecha_aprox": false, "categoria": "movilizacion", "titulo": "CUT proyecta eventual medida de fuerza recién para noviembre pese a presión de las bases por \"paro nacional\"", "resumen": "38° aniversario de la CUT; Bárbara Figueroa (PC) califica la reforma de seguridad de Kast como una norma que lo acerca a \"un dictador\".", "fuentes": ["https://radionuevomundo.cl/2026/08/38-aniversario-cut-las-bases-claman-paro-nacional-presidente-dice-que-en-noviembre/"]},
-    {"id": "w1-21", "fecha": "2026-08-18", "fecha_aprox": false, "categoria": "movilizacion", "titulo": "Colegio de Profesores ratifica paro nacional docente para el 28 de agosto", "resumen": "Exige respuesta formal del Mineduc al petitorio: precarización laboral, SLEP, estandarización educativa.", "fuentes": ["https://www.colegiodeprofesores.cl/28-de-agosto-paro-nacional-docente/"]},
-    {"id": "w1-22", "fecha": "2026-08-16", "fecha_aprox": false, "categoria": "opinion_publica", "titulo": "Cadem sube la aprobación de Kast a 41%; Criteria la mantiene estancada en 35%", "resumen": "Brecha de 6 puntos entre encuestadoras para la misma semana; 90% respalda la salida de Duco y 93% el \"Plan Cancerbero\" (Cadem); desaprobación al 55% (Criteria).", "fuentes": ["https://www.emol.com/noticias/Nacional/2026/08/16/1208666/cadem-aprobacion-kast-sube-cancerbero.html", "https://www.biobiochile.cl/noticias/nacional/chile/2026/08/16/encuesta-criteria-aprobacion-del-presidente-kast-se-estanca-en-35-y-desaprobacion-escala-al-55.shtml"]},
-    {"id": "w1-23", "fecha": "2026-08-20", "fecha_aprox": false, "categoria": "opinion_publica", "titulo": "Cadem: 58% rechaza que el Presidente pueda decretar el nuevo estado de excepción sin aprobación del Congreso", "resumen": "88% apoya incautar bienes del crimen organizado y 78% que las FF.AA. asistan a Carabineros; el respaldo al estado de excepción sube a 52% si requiere aval del Congreso.", "fuentes": ["https://www.biobiochile.cl/noticias/nacional/chile/2026/08/20/cadem-58-rechaza-que-el-presidente-pueda-decretar-estado-de-excepcion-sin-apoyo-del-congreso.shtml"]},
-    {"id": "w1-24", "fecha": "2026-08-23", "fecha_aprox": false, "categoria": "opinion_publica", "titulo": "Criteria: 48% cree que la megarreforma tendrá consecuencias negativas para el crecimiento del país", "resumen": "48% cree que la ley favorece principalmente a grandes empresas y altos ingresos, frente a 33% que dice que promueve el empleo.", "fuentes": ["https://www.atacamanoticias.cl/2026/08/23/encuesta-criteria-aprobacion-de-kast-estancada-en-35-y-48-cree-que-la-megarreforma-sera-negativa/"]}
+    {
+      "id": "b-01",
+      "fecha": "2026-08-05",
+      "fecha_aprox": false,
+      "categoria": "congreso",
+      "titulo": "Megarreforma económica despachada, pero con 3 requerimientos ante el TC y 3 vetos presidenciales pendientes",
+      "resumen": "Baja del impuesto corporativo de 27% a 23%, invariabilidad tributaria hasta 20 años, fin de contribuciones para adultos mayores. Completa trámite legislativo el 5 de agosto.",
+      "fuentes": [
+        "https://www.france24.com/es/minuto-a-minuto/20260716-el-senado-aprueba-la-megarreforma-econ%C3%B3mica-de-kast-en-chile"
+      ]
+    },
+    {
+      "id": "b-02",
+      "fecha": "2026-08-05",
+      "fecha_aprox": false,
+      "categoria": "ejecutivo",
+      "titulo": "Kast lanza en cadena nacional agenda de seguridad ACOT (~15 proyectos)",
+      "resumen": "Nuevo estado de excepción, tipificación de crimen organizado, FF.AA. apoyando a Carabineros en 50 barrios críticos; único anuncio con repunte real en encuestas.",
+      "fuentes": [
+        "https://www.biobiochile.cl/noticias/nacional/chile/2026/08/05/presidente-kast-anuncia-en-cadena-nacional-su-megarreforma-en-seguridad.shtml"
+      ]
+    },
+    {
+      "id": "b-03",
+      "fecha": "2026-05-19",
+      "fecha_aprox": false,
+      "categoria": "ejecutivo",
+      "titulo": "Primer cambio de gabinete de Kast, el más rápido desde el retorno a la democracia (69 días)",
+      "resumen": "Salen la ministra de Seguridad Pública Trinidad Steinert y la vocera Mara Sedini; asume Martín Arrau en Seguridad.",
+      "fuentes": [
+        "https://www.biobiochile.cl/noticias/nacional/chile/2026/05/19/cambio-de-gabinete-a-69-dias-ajuste-ministerial-de-kast-es-el-mas-veloz-desde-retorno-a-la-democracia.shtml"
+      ]
+    },
+    {
+      "id": "b-04",
+      "fecha": "2026-06-23",
+      "fecha_aprox": false,
+      "categoria": "congreso",
+      "titulo": "Acusación constitucional contra el exministro Nicolás Grau: aprobada en Cámara, rechazada en Senado",
+      "resumen": "Cámara aprueba 77-68 el 23 de junio (con votos en contra de RN/Evópoli); Senado la rechaza el 30 de junio en sus 4 capítulos.",
+      "fuentes": [
+        "https://www.senado.cl/comunicaciones/noticias/senado-desestima-acusacion-constitucional-en-contra-del-exministro-grau"
+      ]
+    },
+    {
+      "id": "b-05",
+      "fecha": "2026-08-07",
+      "fecha_aprox": false,
+      "categoria": "congreso",
+      "titulo": "Fractura interna en la derecha por intento del PNL de suspender la Ley Karin por 5 años",
+      "resumen": "Rechazado por la propia Mesa del Senado (UDI/RN) y por Kast; Kaiser acusa al gobierno de falta de capacidad de gestión.",
+      "fuentes": [
+        "https://laprensaaustral.cl/2026/08/07/diputados-presentaron-proyecto-para-suspender-por-cinco-anos-la-ley-karin-y-reabrir-debate-sobre-normas/"
+      ]
+    },
+    {
+      "id": "b-06",
+      "fecha": "2026-07-15",
+      "fecha_aprox": true,
+      "categoria": "ejecutivo",
+      "titulo": "Aranceles de EE.UU. (12,5%) a exportaciones chilenas golpean la política exterior de Kast",
+      "resumen": "87% de la ciudadanía rechaza la medida (Cadem); trascienden reproches internos inéditos del gabinete hacia Washington.",
+      "fuentes": []
+    },
+    {
+      "id": "b-07",
+      "fecha": "2026-07-20",
+      "fecha_aprox": false,
+      "categoria": "ejecutivo",
+      "titulo": "Estado de catástrofe en Coquimbo y Huasco por temporal en el norte",
+      "resumen": "Entre 6 y 23 muertos según la fuente, más de 13.000 damnificados; alcaldes acusan abandono del gobierno central.",
+      "fuentes": [
+        "https://www.infobae.com/america/america-latina/2026/07/21/chile-declaro-el-estado-de-catastrofe-tras-un-temporal-que-dejo-al-menos-10-muertos-y-mas-de-1100-viviendas-destruidas/"
+      ]
+    },
+    {
+      "id": "b-08",
+      "fecha": "2026-08-10",
+      "fecha_aprox": false,
+      "categoria": "judicial",
+      "titulo": "Ningún caso judicial de alto perfil golpea directamente al gobierno de Kast en el trimestre",
+      "resumen": "Los casos penales relevantes del trimestre involucran sobre todo a exautoridades del gobierno anterior y a alcaldes de diversas comunas/partidos.",
+      "fuentes": []
+    },
+    {
+      "id": "b-09",
+      "fecha": "2026-08-10",
+      "fecha_aprox": true,
+      "categoria": "movilizacion",
+      "titulo": "Frente sindical/gremial activo pero disperso: paro docente anunciado para el 28 de agosto",
+      "resumen": "Recortes en salud ($413.000 millones) y educación ($197.000 millones) generan protestas sucesivas de Confech, Colegio de Profesores, ANEF y FENATS entre mayo y agosto.",
+      "fuentes": []
+    },
+    {
+      "id": "b-10",
+      "fecha": "2026-05-19",
+      "fecha_aprox": false,
+      "categoria": "movilizacion",
+      "titulo": "Detención del werken histórico Jorge Huenchullán en La Araucanía",
+      "resumen": "Prófugo desde 2021; seguida de ataques incendiarios contra predios forestales; Kast luego cuestiona la política de compra de tierras para comunidades mapuche.",
+      "fuentes": [
+        "https://www.latercera.com/politica/noticia/kast-por-detencion-de-huenchullan-en-temucuicui-seguimos-avanzando-para-restablecer-el-estado-de-derecho-en-todo-el-territorio-nacional/"
+      ]
+    },
+    {
+      "id": "b-11",
+      "fecha": "2026-08-05",
+      "fecha_aprox": false,
+      "categoria": "congreso",
+      "titulo": "Debate sobre indultos y pelea pública Campillai-Flores en el Senado",
+      "resumen": "28 solicitudes de indulto pendientes; fuerte enfrentamiento público entre las senadoras Fabiola Campillai y Camila Flores por el tema.",
+      "fuentes": []
+    },
+    {
+      "id": "b-12",
+      "fecha": "2026-08-09",
+      "fecha_aprox": false,
+      "categoria": "opinion_publica",
+      "titulo": "Aprobación presidencial de Kast nunca superó 43% en el trimestre; percepción de que \"Chile retrocede\" sube de 31% a 47%",
+      "resumen": "Mínimos históricos en julio (25,6% Pulso Ciudadano; 60% desaprobación Cadem); repunte leve en agosto ligado a la agenda de seguridad.",
+      "fuentes": [
+        "https://www.t13.cl/noticia/politica/criteria-kast-sube-35-aprobacion-pero-aumenta-percepcion-chile-retrocede-9-8-2026"
+      ]
+    },
+    {
+      "id": "w1-01",
+      "fecha": "2026-08-10",
+      "fecha_aprox": false,
+      "categoria": "congreso",
+      "titulo": "Cámara de Diputados aprueba los 3 vetos de Kast a la megarreforma",
+      "resumen": "Anatocismo 75-59-12; olvido financiero 75-58-13; pago a 30 días a pymes 74-50-22. Pasa al Senado.",
+      "fuentes": [
+        "https://www.biobiochile.cl/noticias/nacional/chile/2026/08/10/camara-de-diputados-aprueba-los-tres-vetos-de-kast-a-la-megarreforma-y-pasan-al-senado.shtml"
+      ]
+    },
+    {
+      "id": "w1-02",
+      "fecha": "2026-08-12",
+      "fecha_aprox": false,
+      "categoria": "congreso",
+      "titulo": "Senado aprueba los 3 vetos y cierra la tramitación de la megarreforma en el Congreso",
+      "resumen": "Anatocismo 24-18-1; olvido financiero 23-15-2; pago 30 días pymes 18-17-4 (muy estrecho).",
+      "fuentes": [
+        "https://www.biobiochile.cl/noticias/nacional/chile/2026/08/12/senado-aprueba-vetos-del-gobierno-a-la-megarreforma-y-pone-fin-a-su-tramitacion-en-el-congreso.shtml"
+      ]
+    },
+    {
+      "id": "w1-03",
+      "fecha": "2026-08-13",
+      "fecha_aprox": false,
+      "categoria": "congreso",
+      "titulo": "Tribunal Constitucional acoge parcialmente los requerimientos contra la megarreforma",
+      "resumen": "Caen la indemnización por anulación de RCA y normas de participación ciudadana/acuicultura; se mantiene la invariabilidad tributaria y la baja del impuesto corporativo.",
+      "fuentes": [
+        "https://radio.uchile.cl/2026/08/14/tc-acoge-parcialmente-requerimientos-contra-la-megarreforma-y-declara-inconstitucionales-normas-tributarias-y-ambientales/"
+      ]
+    },
+    {
+      "id": "w1-04",
+      "fecha": "2026-08-13",
+      "fecha_aprox": false,
+      "categoria": "ejecutivo",
+      "titulo": "Renuncia la ministra del Deporte Natalia Duco por el caso del auto fiscal",
+      "resumen": "Junto al subsecretario Andrés Otero; asume Francisco Riveros el 14 de agosto. Sube a 43 el conteo de autoridades fuera del gobierno en 5 meses.",
+      "fuentes": [
+        "https://www.emol.com/noticias/Nacional/2026/08/13/1208459/duco-renuncia-deportes-polemica-auto.html"
+      ]
+    },
+    {
+      "id": "w1-05",
+      "fecha": "2026-08-13",
+      "fecha_aprox": false,
+      "categoria": "ejecutivo",
+      "titulo": "Traslado de ~300 reos de alta peligrosidad al nuevo penal La Laguna (Talca)",
+      "resumen": "Presentado como \"día histórico\"; comparado por CNN con el estilo Bukele; criticado por exautoridades Cordero y Tohá.",
+      "fuentes": [
+        "https://cnnespanol.cnn.com/2026/08/14/latinoamerica/chile-kast-traslado-presos-carcel-orix"
+      ]
+    },
+    {
+      "id": "w1-06",
+      "fecha": "2026-08-17",
+      "fecha_aprox": false,
+      "categoria": "congreso",
+      "titulo": "Gobierno ingresa la reforma constitucional de seguridad (ACOT) al Senado con suma urgencia",
+      "resumen": "Requiere 89 votos en Cámara y 29 en Senado; derivada a 3 comisiones (Constitución, Seguridad, Defensa); sin votación al 24 de agosto.",
+      "fuentes": [
+        "https://www.biobiochile.cl/noticias/nacional/chile/2026/08/17/kast-ingresa-al-senado-reforma-de-seguridad-con-suma-urgencia-contempla-8-medidas.shtml"
+      ]
+    },
+    {
+      "id": "w1-07",
+      "fecha": "2026-08-19",
+      "fecha_aprox": false,
+      "categoria": "congreso",
+      "titulo": "Rebelión parlamentaria: la reforma de seguridad de Kast no reúne ni los votos del oficialismo",
+      "resumen": "RN, UDI, Evópoli y el PNL cuestionan el nuevo estado de excepción por concentrar poder excesivo en el Presidente.",
+      "fuentes": [
+        "https://www.elmostrador.cl/noticias/pais/2026/08/19/rebelion-en-la-derecha-reforma-de-seguridad-de-kast-no-reune-ni-los-votos-del-oficialismo/"
+      ]
+    },
+    {
+      "id": "w1-08",
+      "fecha": "2026-08-17",
+      "fecha_aprox": false,
+      "categoria": "ejecutivo",
+      "titulo": "Kast reconoce que no ha revisado ningún indulto del estallido social",
+      "resumen": "\"No los tengo en mi escritorio\"; genera reclamos en su propia coalición por falta de avance, pese a la iniciativa \"Presos por Servir\" (+10.000 firmas).",
+      "fuentes": [
+        "https://www.latercera.com/politica/noticia/aca-manda-el-presidente-o-el-ministro-de-justicia-kast-reconoce-que-no-ha-revisado-indultos-y-desata-reclamos-en-la-derecha/"
+      ]
+    },
+    {
+      "id": "w1-09",
+      "fecha": "2026-08-18",
+      "fecha_aprox": false,
+      "categoria": "ejecutivo",
+      "titulo": "Estado de Excepción de Catástrofe en Tocopilla por aluvión",
+      "resumen": "Evacuaciones masivas en varios sectores; subsecretario del Interior Máximo Pavez en terreno desde la noche anterior.",
+      "fuentes": [
+        "https://www.emol.com/noticias/Nacional/2026/08/18/1208867/kast-estado-excepcion-tocopilla-aluviones.html"
+      ]
+    },
+    {
+      "id": "w1-10",
+      "fecha": "2026-08-19",
+      "fecha_aprox": false,
+      "categoria": "congreso",
+      "titulo": "Cámara y Senado prorrogan 30 días el estado de excepción en La Araucanía/Biobío/Arauco",
+      "resumen": "Senado aprueba 27 a favor; vigente desde el 23 de agosto; Gobierno argumenta baja de hechos de violencia.",
+      "fuentes": [
+        "https://www.senado.cl/comunicaciones/noticias/prorrogan-estado-de-excepcion-constitucional-de-emergencia-en-la-macrozona"
+      ]
+    },
+    {
+      "id": "w1-11",
+      "fecha": "2026-08-20",
+      "fecha_aprox": false,
+      "categoria": "judicial",
+      "titulo": "Caso Junaeb: allanamientos a los senadores Miguel Ángel Calisto y Sergio Gahona",
+      "resumen": "Fiscalía y PDI realizan +10 allanamientos por presuntas coimas en licitaciones de alimentación escolar (~$14.000 millones, empresa Soser); se levanta el secreto bancario de ambos senadores y del exdiputado Hugo Gutiérrez.",
+      "fuentes": [
+        "https://eldesconcierto.cl/actualidad/fiscalia-allana-oficinas-senadores-calisto-y-gahona-irregularidades-licitaciones-junaeb-n5461527",
+        "https://www.cooperativa.cl/noticias/pais/judicial/denuncias-de-corrupcion/caso-junaeb-pdi-allana-oficinas-de-senadores-gahona-y-calisto-por/2026-08-20/120626.html"
+      ]
+    },
+    {
+      "id": "w1-12",
+      "fecha": "2026-08-18",
+      "fecha_aprox": false,
+      "categoria": "judicial",
+      "titulo": "Formalización del alcalde de Coihueco, Wilson Palma, por 7 delitos de connotación sexual",
+      "resumen": "Tribunal solo acoge la cautelar de no acercamiento a la víctima; rechaza arraigo, firma y arresto domiciliario. Se declara inocente.",
+      "fuentes": [
+        "https://www.biobiochile.cl/noticias/nacional/region-de-nuble/2026/08/18/alcalde-de-coihueco-sera-formalizado-por-presunto-abuso-sexual-tras-denuncia-de-exfuncionaria.shtml"
+      ]
+    },
+    {
+      "id": "w1-13",
+      "fecha": "2026-08-14",
+      "fecha_aprox": false,
+      "categoria": "judicial",
+      "titulo": "Formalización del alcalde de Pozo Almonte, Richard Godoy, por delitos tributarios",
+      "resumen": "Facturas falsas 2016-2021, perjuicio fiscal superior a $1.316 millones; arraigo nacional y firma mensual.",
+      "fuentes": [
+        "https://www.cooperativa.cl/noticias/site/artic/20260814/pags-amp/20260814110955.html"
+      ]
+    },
+    {
+      "id": "w1-14",
+      "fecha": "2026-08-19",
+      "fecha_aprox": false,
+      "categoria": "judicial",
+      "titulo": "Formalización (4° intento) del alcalde de Coronel, Boris Chamorro, por condonación irregular",
+      "resumen": "$1.200 millones condonados en patentes a una embotelladora en 2020; resultado de la audiencia no confirmado al 24 de agosto.",
+      "fuentes": [
+        "https://www.biobiochile.cl/noticias/nacional/region-del-bio-bio/2026/08/19/alcalde-de-coronel-sera-formalizado-por-condonacion-de-1-200-millones-a-embotelladora-llacolen.shtml"
+      ]
+    },
+    {
+      "id": "w1-15",
+      "fecha": "2026-08-17",
+      "fecha_aprox": false,
+      "categoria": "judicial",
+      "titulo": "Caso Convenios / arista Kimün: Diego Ancalao termina de declarar en juicio oral",
+      "resumen": "Fiscalía de Los Lagos pide en conjunto más de 50 años de presidio para 6 imputados por desvío de $1.200 millones del GORE Los Lagos. Sin sentencia al 24 de agosto.",
+      "fuentes": [
+        "https://www.biobiochile.cl/noticias/nacional/region-de-los-lagos/2026/08/17/caso-convenios-avanza-juicio-por-presunto-desvio-de-1-200-millones-del-gore-los-lagos-a-kimun.shtml"
+      ]
+    },
+    {
+      "id": "w1-16",
+      "fecha": "2026-08-17",
+      "fecha_aprox": false,
+      "categoria": "judicial",
+      "titulo": "Fiscalía amplía investigación al PDG por lavado de activos",
+      "resumen": "Nueva arista suma a las de firmas falsas y gastos irregulares 2023; incluye denuncias de quema de cartolas bancarias del partido. Parisi niega haber sido contactado.",
+      "fuentes": [
+        "https://www.elmostrador.cl/noticias/pais/2026/08/17/fiscalia-indaga-lavado-de-activos-en-el-pdg-y-parisi-ironiza-con-quema-de-cartolas/"
+      ]
+    },
+    {
+      "id": "w1-17",
+      "fecha": "2026-08-22",
+      "fecha_aprox": false,
+      "categoria": "judicial",
+      "titulo": "Frente Amplio oficia a Contraloría por presunto conflicto de interés del ministro de Hacienda Jorge Quiroz",
+      "resumen": "Vinculado a tramitación acelerada de un proyecto inmobiliario de su hermano e inconsistencias en su declaración de patrimonio. Es un requerimiento de fiscalización, no un sumario formal.",
+      "fuentes": [
+        "https://www.t13.cl/noticia/politica/frente-amplio-oficia-contraloria-por-eventuales-conflictos-interes-ministro-quiroz-22-8-2026"
+      ]
+    },
+    {
+      "id": "w1-18",
+      "fecha": "2026-08-10",
+      "fecha_aprox": false,
+      "categoria": "movilizacion",
+      "titulo": "Movilización de trabajadores de Chuquicamata por \"Codelco 100% estatal\"",
+      "resumen": "Rechazan una eventual privatización parcial planteada por el senador republicano Arturo Squella; petitorio de 7 puntos entregado a Kast el 12 de agosto. Gobierno reitera que no está en sus planes.",
+      "fuentes": [
+        "https://www.elclarin.cl/2026/08/11/codelco-no-esta-en-venta-trabajadores-se-movilizan-en-santiago-ante-amenaza-de-privatizacion/"
+      ]
+    },
+    {
+      "id": "w1-19",
+      "fecha": "2026-08-13",
+      "fecha_aprox": false,
+      "categoria": "movilizacion",
+      "titulo": "Gobierno finaliza el desalojo de la \"megatoma\" de San Antonio",
+      "resumen": "98,4 hectáreas devueltas a su propietario; más de 500 personas removidas desde julio-agosto; el Gobierno anuncia que el operativo continuará en otras regiones.",
+      "fuentes": [
+        "https://www.cooperativa.cl/noticias/pais/region-de-valparaiso/gobierno-finalizo-desalojo-de-megatoma-de-san-antonio-terreno-fue/2026-08-13/213514.html"
+      ]
+    },
+    {
+      "id": "w1-20",
+      "fecha": "2026-08-20",
+      "fecha_aprox": false,
+      "categoria": "movilizacion",
+      "titulo": "CUT proyecta eventual medida de fuerza recién para noviembre pese a presión de las bases por \"paro nacional\"",
+      "resumen": "38° aniversario de la CUT; Bárbara Figueroa (PC) califica la reforma de seguridad de Kast como una norma que lo acerca a \"un dictador\".",
+      "fuentes": [
+        "https://radionuevomundo.cl/2026/08/38-aniversario-cut-las-bases-claman-paro-nacional-presidente-dice-que-en-noviembre/"
+      ]
+    },
+    {
+      "id": "w1-21",
+      "fecha": "2026-08-18",
+      "fecha_aprox": false,
+      "categoria": "movilizacion",
+      "titulo": "Colegio de Profesores ratifica paro nacional docente para el 28 de agosto",
+      "resumen": "Exige respuesta formal del Mineduc al petitorio: precarización laboral, SLEP, estandarización educativa.",
+      "fuentes": [
+        "https://www.colegiodeprofesores.cl/28-de-agosto-paro-nacional-docente/"
+      ]
+    },
+    {
+      "id": "w1-22",
+      "fecha": "2026-08-16",
+      "fecha_aprox": false,
+      "categoria": "opinion_publica",
+      "titulo": "Cadem sube la aprobación de Kast a 41%; Criteria la mantiene estancada en 35%",
+      "resumen": "Brecha de 6 puntos entre encuestadoras para la misma semana; 90% respalda la salida de Duco y 93% el \"Plan Cancerbero\" (Cadem); desaprobación al 55% (Criteria).",
+      "fuentes": [
+        "https://www.emol.com/noticias/Nacional/2026/08/16/1208666/cadem-aprobacion-kast-sube-cancerbero.html",
+        "https://www.biobiochile.cl/noticias/nacional/chile/2026/08/16/encuesta-criteria-aprobacion-del-presidente-kast-se-estanca-en-35-y-desaprobacion-escala-al-55.shtml"
+      ]
+    },
+    {
+      "id": "w1-23",
+      "fecha": "2026-08-20",
+      "fecha_aprox": false,
+      "categoria": "opinion_publica",
+      "titulo": "Cadem: 58% rechaza que el Presidente pueda decretar el nuevo estado de excepción sin aprobación del Congreso",
+      "resumen": "88% apoya incautar bienes del crimen organizado y 78% que las FF.AA. asistan a Carabineros; el respaldo al estado de excepción sube a 52% si requiere aval del Congreso.",
+      "fuentes": [
+        "https://www.biobiochile.cl/noticias/nacional/chile/2026/08/20/cadem-58-rechaza-que-el-presidente-pueda-decretar-estado-de-excepcion-sin-apoyo-del-congreso.shtml"
+      ]
+    },
+    {
+      "id": "w1-24",
+      "fecha": "2026-08-23",
+      "fecha_aprox": false,
+      "categoria": "opinion_publica",
+      "titulo": "Criteria: 48% cree que la megarreforma tendrá consecuencias negativas para el crecimiento del país",
+      "resumen": "48% cree que la ley favorece principalmente a grandes empresas y altos ingresos, frente a 33% que dice que promueve el empleo.",
+      "fuentes": [
+        "https://www.atacamanoticias.cl/2026/08/23/encuesta-criteria-aprobacion-de-kast-estancada-en-35-y-48-cree-que-la-megarreforma-sera-negativa/"
+      ]
+    },
+    {
+      "id": "w2-01",
+      "fecha": "2026-08-24",
+      "fecha_aprox": false,
+      "categoria": "ejecutivo",
+      "titulo": "Llega a Chile el negociador de EE.UU. por el arancel del 12,5%",
+      "resumen": "Jeffrey Goettman (USTR) se reúne con la subsecretaria Paula Estévez por productos a excluir (salmón, fruta, vino, madera); sin anuncio de exención.",
+      "fuentes": [
+        "https://www.emol.com/noticias/Economia/2026/08/24/1209392/funcionario-eeuu-chile-aranceles.html"
+      ]
+    },
+    {
+      "id": "w2-02",
+      "fecha": "2026-08-25",
+      "fecha_aprox": false,
+      "categoria": "opinion_publica",
+      "titulo": "Kast se abre a modificar la ACOT tras rechazo transversal al nuevo estado de excepción",
+      "resumen": "Tras el 58% (Cadem) que rechazaba que el Presidente decretara el estado de excepción sin aval del Congreso, el gobierno anuncia apertura a cambios antes del debate en el Senado.",
+      "fuentes": [
+        "https://www.infobae.com/america/agencias/2026/08/25/kast-se-abre-a-cambios-en-reforma-de-seguridad-tras-objecion-a-nuevo-estado-de-excepcion/"
+      ]
+    },
+    {
+      "id": "w2-03",
+      "fecha": "2026-08-28",
+      "fecha_aprox": false,
+      "categoria": "movilizacion",
+      "titulo": "Paro nacional docente de 24 horas se concreta, con adhesión dispareja por región",
+      "resumen": "Colegio de Profesores; ~65% de adhesión en La Araucanía; sin escalada a paro indefinido detectada.",
+      "fuentes": [
+        "https://www.colegiodeprofesores.cl/28-de-agosto-paro-nacional-docente/"
+      ]
+    },
+    {
+      "id": "w2-04",
+      "fecha": "2026-08-28",
+      "fecha_aprox": true,
+      "categoria": "ejecutivo",
+      "titulo": "Ministro Quiroz fija promulgación de la megarreforma para la primera quincena de septiembre",
+      "resumen": "Proyección condicionada al fallo del control preventivo del TC sobre ocho artículos observados.",
+      "fuentes": [
+        "https://www.meganoticias.cl/nacional/530449-ministro-jorge-quiroz-fecha-promulgacion-megarreforma-gobierno-kast-28-08-2026.html"
+      ]
+    },
+    {
+      "id": "w2-05",
+      "fecha": "2026-08-30",
+      "fecha_aprox": false,
+      "categoria": "opinion_publica",
+      "titulo": "Pulso Ciudadano registra la mayor recuperación de Kast del período: sube a 33,8%",
+      "resumen": "+8,2 puntos desde el mínimo histórico de julio (25,6%); desaprobación baja a 54,4%.",
+      "fuentes": [
+        "https://www.emol.com/noticias/Nacional/2026/08/30/1209986/pulso-ciudadano-aprobacion-presidente-kast.html"
+      ]
+    },
+    {
+      "id": "w2-06",
+      "fecha": "2026-09-01",
+      "fecha_aprox": false,
+      "categoria": "ejecutivo",
+      "titulo": "Kast descarta otorgar indultos a exuniformados durante septiembre",
+      "resumen": "Pese a la expectativa de republicanos y libertarios; profundiza el malestar en la derecha oficialista.",
+      "fuentes": [
+        "https://www.latercera.com/politica/noticia/kast-descarta-otorgamiento-de-indultos-durante-septiembre-y-profundiza-malestar-en-la-derecha/"
+      ]
+    },
+    {
+      "id": "w2-07",
+      "fecha": "2026-09-01",
+      "fecha_aprox": false,
+      "categoria": "ejecutivo",
+      "titulo": "Gobierno rebaja la urgencia de la reforma de seguridad ACOT de suma a simple",
+      "resumen": "Tras confirmar que no reunía los 29 votos necesarios en el Senado; descarta retirar el proyecto.",
+      "fuentes": [
+        "https://www.infobae.com/america/america-latina/2026/09/01/el-gobierno-chileno-le-quito-la-suma-urgencia-en-el-congreso-a-su-reforma-de-seguridad-pero-descarto-retirarla/"
+      ]
+    },
+    {
+      "id": "w2-08",
+      "fecha": "2026-09-01",
+      "fecha_aprox": false,
+      "categoria": "congreso",
+      "titulo": "Cámara aprueba en general tipificar el uso indebido de licencias médicas como falta a la probidad",
+      "resumen": "Permite despido cuando exista resolución firme de organismo competente. Pasa al Senado.",
+      "fuentes": [
+        "https://www.larazon.cl/2026/09/01/diputados-aprueban-como-falta-de-probidad-el-uso-indebido-de-licencias-medicas/"
+      ]
+    },
+    {
+      "id": "w2-09",
+      "fecha": "2026-09-02",
+      "fecha_aprox": false,
+      "categoria": "judicial",
+      "titulo": "Fiscalía pide acelerar diligencias de lavado de activos contra el PDG (Franco Parisi)",
+      "resumen": "11 personas ligadas al partido; investigación por fraude de subvenciones y lavado de activos, aún no formalizada.",
+      "fuentes": [
+        "https://www.meganoticias.cl/nacional/530794-pdg-investigacion-franco-parisi-mega-investiga-2-9-2026.html"
+      ]
+    },
+    {
+      "id": "w2-10",
+      "fecha": "2026-09-02",
+      "fecha_aprox": false,
+      "categoria": "ejecutivo",
+      "titulo": "Amnistía Internacional pide a Kast no indultar a condenados por el estallido social",
+      "resumen": "Manifestación frente a La Moneda en medio del debate abierto por presión de republicanos y libertarios.",
+      "fuentes": [
+        "https://radio.uchile.cl/2026/09/02/no-cabe-amnistia-no-cabe-indulto-amnistia-internacional-pide-a-kast-no-beneficiar-a-condenados-por-delitos-cometidos-durante-el-estallido/"
+      ]
+    },
+    {
+      "id": "w2-11",
+      "fecha": "2026-09-03",
+      "fecha_aprox": false,
+      "categoria": "judicial",
+      "titulo": "Fiscalía abre investigación penal por el Caso Cerimedo (presunta red de bots ligada a la campaña de Kast)",
+      "resumen": "Delitos informáticos y eventual asociación ilícita; denuncia del diputado Juan Santana sobre el estratega Fernando Cerimedo. Sin imputados individuales aún.",
+      "fuentes": [
+        "https://www.elmostrador.cl/noticias/pais/2026/09/03/fiscalia-abre-investigacion-penal-por-caso-cerimedo-buscara-intervencion-en-elecciones-chilenas/",
+        "https://www.infobae.com/america/agencias/2026/09/03/fiscalia-chilena-abre-investigacion-a-fernando-cerimedo-por-posibles-delitos-informaticos/"
+      ]
+    },
+    {
+      "id": "w2-12",
+      "fecha": "2026-09-03",
+      "fecha_aprox": false,
+      "categoria": "movilizacion",
+      "titulo": "Marcha estudiantil con incidentes en la Alameda contra medidas del gobierno de Kast",
+      "resumen": "ACES y Confech; enfrentamientos con Carabineros.",
+      "fuentes": [
+        "https://www.theclinic.cl/2026/09/03/estudiantes-vuelven-a-la-calle-escolares-y-universitarios-se-movilizaran-este-jueves-en-rechazo-a-medidas-del-gobierno-de-kast/"
+      ]
+    },
+    {
+      "id": "w2-13",
+      "fecha": "2026-09-04",
+      "fecha_aprox": false,
+      "categoria": "judicial",
+      "titulo": "Fiscalía de Aysén acusa a 8 imputados y pide el desafuero del senador Calisto (nueva causa)",
+      "resumen": "Asesorías parlamentarias falsas 2018-2022, perjuicio superior a $100 millones; Corte de Puerto Montt revisa el caso (Coyhaique se inhabilitó por desafuero previo).",
+      "fuentes": [
+        "https://www.elperiodista.cl/2026/09/fiscalia-acusa-a-ocho-imputados-por-fraude-al-fisco-y-solicita-desafuero-del-senador-calisto/"
+      ]
+    },
+    {
+      "id": "w2-14",
+      "fecha": "2026-09-04",
+      "fecha_aprox": false,
+      "categoria": "judicial",
+      "titulo": "Caso Junaeb: rechazan recursos de amparo de Hugo Gutiérrez y Sergio Gahona",
+      "resumen": "Siguen como indagados sin acceso pleno a la carpeta investigativa.",
+      "fuentes": [
+        "https://www.meganoticias.cl/nacional/530997-hugo-gutierrez-sergio-gahona-recursos-amparo-junaeb-04-09-2026.html"
+      ]
+    },
+    {
+      "id": "w2-15",
+      "fecha": "2026-09-04",
+      "fecha_aprox": true,
+      "categoria": "movilizacion",
+      "titulo": "Caminata Santiago-Valparaíso del Colegio de Profesores contra recortes al presupuesto de Educación 2027",
+      "resumen": "~100 km hasta el Congreso, con APROJUNJI y funcionarios de Junaeb; llega el 8 de septiembre.",
+      "fuentes": [
+        "https://www.latercera.com/nacional/noticia/colegio-de-profesores-inicia-caminata-hacia-el-congreso-gremio-acusa-que-educacion-publica-esta-muy-amenazada/"
+      ]
+    },
+    {
+      "id": "w2-16",
+      "fecha": "2026-09-06",
+      "fecha_aprox": false,
+      "categoria": "opinion_publica",
+      "titulo": "Criteria: aprobación de Kast cae a 30% en medio de pesimismo económico",
+      "resumen": "Revierte parte de la recuperación de fines de agosto.",
+      "fuentes": [
+        "https://www.latribuna.cl/politica/2026/09/06/encuesta-criteria-aprobacion-de-kast-cae-al-30-en-medio-de-pesimismo-economico.html"
+      ]
+    },
+    {
+      "id": "w2-17",
+      "fecha": "2026-09-07",
+      "fecha_aprox": true,
+      "categoria": "ejecutivo",
+      "titulo": "TC prolonga revisión de la megarreforma y obliga a Quiroz a reajustar plazos de promulgación",
+      "resumen": "No se confirma si la ley fue finalmente promulgada en el Diario Oficial antes del 21 de septiembre; hilo abierto.",
+      "fuentes": [
+        "https://www.elmostrador.cl/noticias/pais/2026/09/07/tc-prolonga-revision-de-la-megarreforma-y-obliga-a-quiroz-a-reajustar-sus-plazos/"
+      ]
+    },
+    {
+      "id": "w2-18",
+      "fecha": "2026-09-07",
+      "fecha_aprox": false,
+      "categoria": "ejecutivo",
+      "titulo": "Natalia Duco regresa a La Moneda como asesora del segundo piso, a 24 días de su renuncia",
+      "resumen": "Asesora presidencial en el equipo de Alejandro Irarrázaval, para materias deportivas y Special Olympics 2027.",
+      "fuentes": [
+        "https://www.latercera.com/politica/noticia/a-menos-de-un-mes-de-su-salida-del-gobierno-natalia-duco-regresa-a-la-moneda-como-asesora-del-segundo-piso/"
+      ]
+    },
+    {
+      "id": "w2-19",
+      "fecha": "2026-09-08",
+      "fecha_aprox": false,
+      "categoria": "ejecutivo",
+      "titulo": "Inspección Total al gobierno de Boric deriva 4 organismos a la Fiscalía",
+      "resumen": "1.529 hallazgos, 53 servicios con sumarios administrativos; Junaeb, Dirección del Trabajo y subsecretarías de la Mujer y del Deporte derivadas al Ministerio Público. Sin imputados individuales.",
+      "fuentes": [
+        "https://www.theclinic.cl/2026/09/08/inspeccion-total-al-gobierno-de-boric-administracion-de-kast-enviara-informacion-de-4-ministerios-a-fiscalia-por-presuntas-irregularidades"
+      ]
+    },
+    {
+      "id": "w2-20",
+      "fecha": "2026-09-08",
+      "fecha_aprox": false,
+      "categoria": "congreso",
+      "titulo": "Senado despacha proyecto de Sala Cuna Universal a la Cámara, pero rechaza su financiamiento",
+      "resumen": "Se aprueba el derecho, copago y gradualidad; cae el artículo de financiamiento del fondo (25 votos, a 1 del quórum).",
+      "fuentes": [
+        "https://www.emol.com/noticias/Nacional/2026/09/09/1211002/sala-cuna-universal.html"
+      ]
+    },
+    {
+      "id": "w2-21",
+      "fecha": "2026-09-08",
+      "fecha_aprox": false,
+      "categoria": "ejecutivo",
+      "titulo": "Senado aprueba nueva prórroga de 30 días del estado de excepción en Araucanía, Biobío y Arauco",
+      "resumen": "Gobierno reporta baja de 24% en hechos de violencia rural en 2026 vs 2025.",
+      "fuentes": [
+        "https://www.senado.cl/comunicaciones/noticias/por-30-dias-mas-se-mantiene-el-estado-de-excepcion-constitucional-en-la"
+      ]
+    },
+    {
+      "id": "w2-22",
+      "fecha": "2026-09-08",
+      "fecha_aprox": false,
+      "categoria": "ejecutivo",
+      "titulo": "Kast recibe a republicanos y libertarios en Cerro Castillo y ratifica compromiso con indultos, sin fecha",
+      "resumen": "Dos reuniones en 24 horas (8 y 9 de septiembre); tensiona al oficialismo por el alcance de las medidas.",
+      "fuentes": [
+        "https://www.eldinamo.cl/politica/2026/09/08/en-cerro-castillo-republicanos-y-libertarios-reinstalan-indultos/"
+      ]
+    },
+    {
+      "id": "w2-23",
+      "fecha": "2026-09-08",
+      "fecha_aprox": true,
+      "categoria": "congreso",
+      "titulo": "Confirmado: el 17 de septiembre de 2026 no será feriado nacional",
+      "resumen": "El proyecto no completó su primer trámite constitucional en la Cámara a tiempo.",
+      "fuentes": [
+        "https://www.meganoticias.cl/nacional/531254-definitivo-17-de-septiembre-no-sera-feriado-fiestas-patrias-tiempos-legislativos-vencidos-09-09-2026.html"
+      ]
+    },
+    {
+      "id": "w2-24",
+      "fecha": "2026-09-09",
+      "fecha_aprox": false,
+      "categoria": "congreso",
+      "titulo": "Senado aprueba y despacha a la Cámara la modernización de la carrera funcionaria de Carabineros",
+      "resumen": "Extiende la carrera a 41 años de servicio para nuevos ingresos; bono trimestral e inversión anual de ~$100.394 millones.",
+      "fuentes": [
+        "https://www.latercera.com/politica/noticia/senado-aprueba-proyecto-que-moderniza-la-carrera-funcionaria-de-carabineros-y-refuerza-incentivos-para-ingreso-y-permanencia/"
+      ]
+    },
+    {
+      "id": "w2-25",
+      "fecha": "2026-09-11",
+      "fecha_aprox": true,
+      "categoria": "movilizacion",
+      "titulo": "Camioneros descartan paro nacional por alza de combustibles pero advierten paralización silente",
+      "resumen": "CNTC y CNDC a la espera de definiciones del Ministerio de Hacienda.",
+      "fuentes": [
+        "https://www.infobae.com/america/america-latina/2026/09/11/camioneros-chilenos-descartaron-irse-al-paro-por-el-alza-de-los-combustibles/"
+      ]
+    },
+    {
+      "id": "w2-26",
+      "fecha": "2026-09-13",
+      "fecha_aprox": false,
+      "categoria": "opinion_publica",
+      "titulo": "Criteria: aprobación de Kast sube a 31% en plena tensión con Argentina por el Estrecho de Magallanes",
+      "resumen": "63% cree que Chile debe defender su soberanía con firmeza aunque genere conflicto bilateral (transversal: 81% izquierda, 60% derecha).",
+      "fuentes": [
+        "https://www.latercera.com/politica/noticia/criteria-kast-anade-un-punto-a-su-aprobacion-y-llega-al-31-mientras-que-su-desaprobacion-se-ubica-en-el-55/"
+      ]
+    },
+    {
+      "id": "w2-27",
+      "fecha": "2026-09-13",
+      "fecha_aprox": false,
+      "categoria": "opinion_publica",
+      "titulo": "Cadem evalúa los primeros 6 meses de Kast: nota 3,4 y 62% dice que ha sido peor de lo esperado",
+      "resumen": "Aprobación 34%, desaprobación 62% (máximo hasta esa fecha); 79% pide más esfuerzo en economía y empleo.",
+      "fuentes": [
+        "https://www.latercera.com/nacional/noticia/a-seis-meses-del-inicio-del-gobierno-62-piensa-que-ha-sido-peor-de-lo-que-esperaba-y-es-evaluado-con-nota-34/"
+      ]
+    },
+    {
+      "id": "w2-28",
+      "fecha": "2026-09-14",
+      "fecha_aprox": false,
+      "categoria": "ejecutivo",
+      "titulo": "Kast atribuye la caída en las encuestas al bencinazo y al desempleo",
+      "resumen": "Balance de 6 meses; \"la verdad duele y se ve reflejada en los sondeos\".",
+      "fuentes": [
+        "https://www.elmostrador.cl/noticias/pais/2026/09/14/kast-hace-balance-de-sus-primeros-seis-meses-y-atribuye-caida-en-las-encuestas-al-bencinazo"
+      ]
+    },
+    {
+      "id": "w2-29",
+      "fecha": "2026-09-14",
+      "fecha_aprox": false,
+      "categoria": "judicial",
+      "titulo": "Corte de Apelaciones de Puerto Montt revisa el desafuero del senador Calisto (nueva causa)",
+      "resumen": "Fiscalía pide desaforarlo por fraude al Fisco de más de $105 millones; tribunal tiene hasta un mes para resolver.",
+      "fuentes": [
+        "https://www.cooperativa.cl/noticias/pais/judicial/denuncias-de-corrupcion/corte-revisa-desafuero-del-senador-miguel-angel-calisto/2026-09-14/170421.html"
+      ]
+    },
+    {
+      "id": "w2-30",
+      "fecha": "2026-09-14",
+      "fecha_aprox": false,
+      "categoria": "judicial",
+      "titulo": "Caso Audios/Factop: Fiscalía acusa a Hermosilla y pide 17 años de cárcel",
+      "resumen": "18 años para Leonarda Villalobos; cohecho, tráfico de influencias, lavado de activos y delitos tributarios. Audiencia de preparación de juicio oral: 13 de octubre.",
+      "fuentes": [
+        "https://www.cooperativa.cl/noticias/pais/judicial/denuncias-de-corrupcion/fiscalia-concluyo-investigacion-del-caso-audio-y-pidio-17-anos-de-carcel/2026-09-15/191513.html"
+      ]
+    },
+    {
+      "id": "w2-31",
+      "fecha": "2026-09-14",
+      "fecha_aprox": true,
+      "categoria": "ejecutivo",
+      "titulo": "Renuncia el seremi de Vivienda de Antofagasta (salida N°46) por recorte habitacional",
+      "resumen": "De 8.733 a 3.268 viviendas comprometidas para la región; Contraloría señala graves falencias en el convenio.",
+      "fuentes": [
+        "https://www.latercera.com/nacional/noticia/renuncia-seremi-de-vivienda-de-antofagasta-ministro-poduje-acuso-graves-falencias-en-convenio-para-construir-casas/"
+      ]
+    },
+    {
+      "id": "w2-32",
+      "fecha": "2026-09-14",
+      "fecha_aprox": false,
+      "categoria": "judicial",
+      "titulo": "Caso Llacolén (Coronel): apelación para adelantar formalización de Boris Chamorro queda en tabla",
+      "resumen": "Formalización sigue agendada para el 26 de octubre.",
+      "fuentes": [
+        "https://www.canal9.cl/episodios/2026/09/14/en-tabla-esta-apelacion-que-busca-adelantar-formalizacion-de-alcalde-de-coronel-por-fraude-al-fisco-2"
+      ]
+    },
+    {
+      "id": "w2-33",
+      "fecha": "2026-09-15",
+      "fecha_aprox": false,
+      "categoria": "ejecutivo",
+      "titulo": "Removido el seremi de Salud de La Araucanía (salida N°47) por comparar hogares de ancianos con vertederos",
+      "resumen": "Declaración en medio de la fiscalización de ELEAM tras el incendio en Pitrufquén que mató a 16 adultos mayores.",
+      "fuentes": [
+        "https://www.biobiochile.cl/noticias/nacional/chile/2026/09/15/los-ancianos-y-la-basura-la-polemica-analogia-que-termino-con-la-salida-n47-del-gobierno-de-kast.shtml"
+      ]
+    },
+    {
+      "id": "w2-34",
+      "fecha": "2026-09-15",
+      "fecha_aprox": true,
+      "categoria": "congreso",
+      "titulo": "Comisión Mixta destraba por unanimidad la reforma al sistema político (ley de partidos)",
+      "resumen": "Votación final en Senado (22 sep) y Cámara (23 sep), fuera de esta ventana.",
+      "fuentes": [
+        "https://www.senado.cl/comunicaciones/noticias/comision-mixta-destraba-proyecto-de-gobernabilidad-y-representatividad-del"
+      ]
+    },
+    {
+      "id": "w2-35",
+      "fecha": "2026-09-16",
+      "fecha_aprox": false,
+      "categoria": "judicial",
+      "titulo": "Caso Audios: CDE se querella contra el exjuez Antonio Ulloa por cohecho agravado",
+      "resumen": "Presuntos pagos de ~$74,3 millones de un conservador de bienes raíces a cambio de fallos favorables; también alcanza a Hermosilla, Vargas, Donoso y Yáber.",
+      "fuentes": [
+        "https://www.t13.cl/noticia/nacional/caso-audios-cde-se-querella-contra-exministro-antonio-ulloa-cohecho-secretos-16-9-2026"
+      ]
+    },
+    {
+      "id": "w2-36",
+      "fecha": "2026-09-16",
+      "fecha_aprox": false,
+      "categoria": "opinion_publica",
+      "titulo": "Tricel rechaza destitución del gobernador Claudio Orrego; su reunión con Kast desconcierta a Republicanos",
+      "resumen": "Votación 3-2; Republicanos ven la ofensiva fallida y el posterior encuentro con Kast como tensión interna de la coalición.",
+      "fuentes": [
+        "https://www.latercera.com/politica/noticia/cita-entre-kast-y-orrego-genera-desconcierto-en-republicanos-tras-fallida-ofensiva-del-partido-para-destituir-al-gobernador/"
+      ]
+    },
+    {
+      "id": "w2-37",
+      "fecha": "2026-09-16",
+      "fecha_aprox": false,
+      "categoria": "ejecutivo",
+      "titulo": "PNL emplaza a Kast a cumplir su promesa de campaña sobre indultos a exuniformados",
+      "resumen": "Ante la falta de definición del Ejecutivo pese a los encuentros de Cerro Castillo.",
+      "fuentes": [
+        "https://radio.uchile.cl/2026/09/16/partido-nacional-libertario-emplaza-a-kast-a-cumplir-promesa-de-campana-y-avanzar-con-indultos-a-exuniformados/"
+      ]
+    },
+    {
+      "id": "w2-38",
+      "fecha": "2026-09-17",
+      "fecha_aprox": false,
+      "categoria": "ejecutivo",
+      "titulo": "Renuncia el seremi de Energía de Coquimbo (salida N°48) por objeción de Contraloría a sus títulos académicos",
+      "resumen": "Conteo total: 48 autoridades fuera del gobierno en 6 meses, una cada 3,9 días en promedio.",
+      "fuentes": [
+        "https://www.biobiochile.cl/noticias/nacional/region-de-coquimbo/2026/09/17/baja-48-del-gobierno-renuncia-seremi-de-energia-de-coquimbo-por-no-acreditar-requisitos-academicos.shtml"
+      ]
+    },
+    {
+      "id": "w2-39",
+      "fecha": "2026-09-18",
+      "fecha_aprox": false,
+      "categoria": "congreso",
+      "titulo": "Reforma de seguridad ACOT sigue sin los 29 votos en el Senado a días de vencer la urgencia simple",
+      "resumen": "El diseño original permitía al Presidente decretar el estado de excepción por 120+120 días sin autorización previa del Congreso.",
+      "fuentes": [
+        "https://www.diarioeldia.cl/noticias/2026/09/18/151417-reforma-de-seguridad-sigue-sin-respaldo-en-el-senado-y-gobierno-enfrenta-los-ultimos-dias-de-urgencia"
+      ]
+    },
+    {
+      "id": "w2-40",
+      "fecha": "2026-09-18",
+      "fecha_aprox": true,
+      "categoria": "movilizacion",
+      "titulo": "Punta Arenas: habitantes de la toma Villa Las Etnias (~120 familias) deben desalojar antes del 19 de octubre",
+      "resumen": "Parte de una serie de desalojos de tomas en curso (Los Vilos, San Antonio, Punta Arenas).",
+      "fuentes": [
+        "https://laprensaaustral.cl/2026/09/18/habitantes-de-la-toma-villa-las-etnias-deberan-desalojar-antes-del-19-de-octubre/"
+      ]
+    },
+    {
+      "id": "w2-41",
+      "fecha": "2026-09-20",
+      "fecha_aprox": false,
+      "categoria": "congreso",
+      "titulo": "Comisión Mixta de Reglas del Uso de la Fuerza (RUF) se retoma recién el 29 de septiembre",
+      "resumen": "Sesión prevista para el 22 de septiembre fue reprogramada; el proyecto se vincula al eventual despliegue de FF.AA. en barrios críticos.",
+      "fuentes": [
+        "https://www.biobiochile.cl/noticias/nacional/chile/2026/09/20/este-29-de-septiembre-se-retoma-la-comision-mixta-por-reglas-del-uso-de-la-fuerza.shtml"
+      ]
+    },
+    {
+      "id": "w2-42",
+      "fecha": "2026-09-20",
+      "fecha_aprox": false,
+      "categoria": "opinion_publica",
+      "titulo": "Criteria marca el peor registro de Kast desde marzo: 29% aprobación, 59% desaprobación",
+      "resumen": "El Clarín titula sobre una \"semana negra\"; La Tercera y T13 reportan la cifra de forma más descriptiva.",
+      "fuentes": [
+        "https://www.biobiochile.cl/noticias/nacional/chile/2026/09/20/encuesta-criteria-aprobacion-de-kast-cae-al-29-y-desaprobacion-escala-al-59.shtml"
+      ]
+    },
+    {
+      "id": "w2-43",
+      "fecha": "2026-09-20",
+      "fecha_aprox": false,
+      "categoria": "opinion_publica",
+      "titulo": "Cadem reporta cuadro más benigno la misma semana: 36% aprobación, 60% desaprobación",
+      "resumen": "Brecha Cadem-Criteria de 7 puntos en la misma semana; canciller Francisco Pérez Mackenna cae a 43% previo a la gira a la ONU.",
+      "fuentes": [
+        "https://reportediario.cl/2026/09/20/cadem-desaprobacion-de-kast-se-mantiene-en-60-y-canciller-cae-a-43-previo-a-la-onu/"
+      ]
+    },
+    {
+      "id": "w2-44",
+      "fecha": "2026-09-20",
+      "fecha_aprox": false,
+      "categoria": "congreso",
+      "titulo": "Confusam convoca paro nacional de salud primaria para el 24-26 de septiembre",
+      "resumen": "Por agresiones a funcionarios, seguridad en recintos de salud y exclusión de la reforma de salud; ocurre fuera de esta ventana.",
+      "fuentes": [
+        "https://www.cnnchile.com/pais/confusam-realiza-movilizacion-nacional-este-24-y-25-de-septiembre/"
+      ]
+    },
+    {
+      "id": "w2-45",
+      "fecha": "2026-09-21",
+      "fecha_aprox": false,
+      "categoria": "ejecutivo",
+      "titulo": "Kast viaja a Nueva York para su primer discurso como presidente ante la Asamblea General de la ONU",
+      "resumen": "Bilaterales confirmados con Zelenski y Carney; eje central en seguridad y crimen organizado transnacional, en medio de controversia por declaraciones del embajador de EE.UU., Brandon Judd.",
+      "fuentes": [
+        "https://www.infobae.com/america/agencias/2026/09/20/kast-viaja-a-nueva-york-para-dar-primer-discurso-como-presidente-de-chile-ante-la-onu/"
+      ]
+    }
   ]
 }
